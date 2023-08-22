@@ -1,7 +1,7 @@
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'screen/home/home.dart';
+import 'screen/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: SplashScreen(),
     );
   }
 }
