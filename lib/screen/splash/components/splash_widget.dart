@@ -1,3 +1,4 @@
+import 'package:emark/screen/form/login/login.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class SplashButton extends StatelessWidget {
       top: 606,
       child: GestureDetector(
         onTap: () {
-          print('pressed');
+          Navigator.pushNamed(context, SignIn.routeName);
         },
         child: Container(
           width: 200,
