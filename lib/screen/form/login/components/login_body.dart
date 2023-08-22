@@ -69,12 +69,11 @@ class _SignInFormState extends State<SignInForm> {
                 gapPadding: 10,
               ),
               suffixIcon: Padding(
-                padding: EdgeInsets.fromLTRB(
-                  0,
-                  getProportionateScreenWidth(20),
-                  getProportionateScreenWidth(20),
-                  getProportionateScreenWidth(20),
-                ),
+                padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                    // getProportionateScreenWidth(20),
+                    // getProportionateScreenWidth(20),
+                    // getProportionateScreenWidth(20),
+                    ),
                 child: SvgPicture.asset(
                   'assets/icons/mail.svg',
                   height: getProportionateScreenWidth(18),
