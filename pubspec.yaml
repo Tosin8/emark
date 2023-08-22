@@ -130,20 +130,20 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Muli
       fonts:
-        - asset: fonts/Muli.ttf
-        - asset: fonts/Muli-Bold.ttf
+        - asset: assets/fonts/muli/Muli.ttf
+        - asset: assets/fonts/muli/Muli-Bold.ttf
           weight: 700  
-        - asset: fonts/Muli-BoldItalic.ttf
-        - asset: fonts/Muli-ExtraLight.ttf
-        - asset: fonts/Muli-ExtraLightItalic.ttf
-        - asset: fonts/Muli-italic.ttf
-        - asset: fonts/Muli-Light.ttf
+        - asset: assets/fonts/muli/Muli-BoldItalic.ttf
+        - asset: assets/fonts/muli/Muli-ExtraLight.ttf
+        - asset: assets/fonts/muli/Muli-ExtraLightItalic.ttf
+        - asset: assets/fonts/muli/Muli-italic.ttf
+        - asset: assets/fonts/muli/Muli-Light.ttf
           weight: 300
-        - asset: fonts/Muli-LightItalic.ttf
-        - asset: fonts/Muli-Semibold.ttf
-        - asset: fonts/Muli-Semi-BoldItalic.ttf
+        - asset: assets/fonts/muli/Muli-LightItalic.ttf
+        - asset: assets/fonts/muli/Muli-Semibold.ttf
+        - asset: assets/fonts/muli/Muli-Semi-BoldItalic.ttf
   #         style: italic
   #   - family: Trajan Pro
    #    fonts:
