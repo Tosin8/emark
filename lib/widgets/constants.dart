@@ -12,3 +12,5 @@ const kPrimaryGradientColor = LinearGradient(
 const kTextColor = Color(0xff757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
+
+const Splash_textStyle = TextStyle(fontSize: 32, color: kSecondaryColor);
