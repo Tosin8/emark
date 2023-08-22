@@ -24,6 +24,7 @@ class _LoginBodyState extends State<LoginBody> {
               'Sign in with your email and password or \n continue with your social media accounts',
               textAlign: TextAlign.center,
             ),
+            SizedBox(height: 10),
             SignInForm(),
           ],
         ),
@@ -42,6 +43,20 @@ class SignInForm extends StatefulWidget {
 class _SignInFormState extends State<SignInForm> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Email',
+              hintText: 'Enter your email',
+              enabledBorder: OutlineInputBorder(),
+            ),
+          )
+        ],
+      ),
+    ));
   }
 }
