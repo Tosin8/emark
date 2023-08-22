@@ -34,8 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_svg: ^0.17.4
-  provider: ^4.3.1
+  flutter_svg: ^2.0.7
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
@@ -129,19 +129,21 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-     fonts:
-      - family: Schyler
-       fonts:
-         - asset: fonts/Muli.ttf
-         - asset: fonts/Muli-Bold.ttf
-         - asset: fonts/Muli-BoldItalic.ttf
-         - asset: fonts/Muli-ExtraLight.ttf
-         - asset: fonts/Muli-ExtraLightItalic.ttf
-         - asset: fonts/Muli-italic.ttf
-         - asset: fonts/Muli-Light.ttf
-         - asset: fonts/Muli-LightItalic.ttf
-         - asset: fonts/Muli-Semibold.ttf
-         - asset: fonts/Muli-Semi-BoldItalic.ttf
+  fonts:
+    - family: Schyler
+      fonts:
+        - asset: fonts/Muli.ttf
+        - asset: fonts/Muli-Bold.ttf
+          weight: 700  
+        - asset: fonts/Muli-BoldItalic.ttf
+        - asset: fonts/Muli-ExtraLight.ttf
+        - asset: fonts/Muli-ExtraLightItalic.ttf
+        - asset: fonts/Muli-italic.ttf
+        - asset: fonts/Muli-Light.ttf
+          weight: 300
+        - asset: fonts/Muli-LightItalic.ttf
+        - asset: fonts/Muli-Semibold.ttf
+        - asset: fonts/Muli-Semi-BoldItalic.ttf
   #         style: italic
   #   - family: Trajan Pro
    #    fonts:
