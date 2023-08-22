@@ -62,14 +62,60 @@ flutter:
      - assets/images/splash/1.jpg
      - assets/images/splash/2.jpg
      - assets/images/splash/3.jpg
-     - assets/icons/apple-pay.png
-     - assets/icons/fedex-express.png
-     - assets/icons/glap.png
-     - assets/icons/google-pay.png
-     - assets/icons/mastercard-2.png
-     - assets/icons/pattern-success.png
-     - assets/icons/paypal.png
-     - assets/icons/profile-pic.png
+     - assets/images/sub-image/apple-pay.png
+     - assets/images/sub-image/fedex-express.png
+     - assets/images/sub-image/glap.png
+     - assets/images/sub-image/google-pay.png
+     - assets/images/sub-image/mastercard-2.png
+     - assets/images/sub-image/pattern-success.png
+     - assets/images/sub-image/paypal.png
+     - assets/images/sub-image/profile-pic.png
+     - assets/icons/arrow_right.svg
+     - assets/icons/back_icon.svg
+     - assets/icons/bell.svg
+     - assets/icons/bill_icon.svg
+     - assets/icons/call.svg
+     - assets/icons/camera_icon.svg
+     - assets/icons/cart_icon.svg
+     - assets/icons/cash.svg
+     - assets/icons/chat_bubble_icon.svg
+     - assets/icons/check_mark_rounded.svg
+     - assets/icons/close.svg
+     - assets/icons/conversation.svg
+     - assets/icons/discover.svg
+     - assets/icons/error.svg
+     - assets/icons/facebook-2.svg
+     - assets/icons/flash_icon.svg
+     - assets/icons/game_icon.svg
+     - assets/icons/gift_icon.svg
+     - assets/icons/google-icon.svg
+     - assets/icons/heart_icon.svg
+     - assets/icons/heart_Icon_2.svg
+     - assets/icons/location_point.svg
+     - assets/icons/lock.svg
+     - assets/icons/log_out.svg
+     - assets/icons/mail.svg
+     - assets/icons/parcel.svg
+     - assets/icons/phone.svg
+     - assets/icons/plus_icon.svg
+     - assets/icons/question_mark.svg
+     - assets/icons/receipt.svg
+     - assets/icons/remove.svg
+     - assets/icons/search_icon.svg
+     - assets/icons/settings.svg
+     - assets/icons/shop_icon.svg 
+     - assets/icons/star_icon.svg
+     - assets/icons/success.svg
+     - assets/icons/trash.svg
+     - assets/icons/twitter.svg
+     - assets/icons/user_icon.svg
+     - assets/icons/user.svg
+
+
+
+
+
+
 
   #   - images/a_dot_ham.jpeg
 
