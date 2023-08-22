@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'components/login_body.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -23,6 +25,7 @@ class _SignInState extends State<SignIn> {
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
+        body: LoginBody(),
       ),
     );
   }
