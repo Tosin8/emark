@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
             Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage(
+                  image: const AssetImage(
                     'assets/images/splash/1.jpg',
                   ),
                   colorFilter: ColorFilter.mode(
@@ -30,8 +30,8 @@ class Home extends StatelessWidget {
                     Colors.black.withOpacity(.1),
                   ])),
                 )),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 300),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 300),
               child: Align(
                 alignment: Alignment.center,
                 child: Column(
@@ -66,7 +66,7 @@ class Home extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10)),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Continue',
                       style: TextStyle(
