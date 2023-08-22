@@ -1,3 +1,4 @@
+import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'screen/home/home.dart';
@@ -17,6 +18,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: "Muli",
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: kTextColor),
+        ),
         useMaterial3: true,
       ),
       home: const Home(),
