@@ -13,15 +13,37 @@ class SplashBody extends StatefulWidget {
 class _SplashBodyState extends State<SplashBody> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Stack(
         children: [
-          SplashBackground(),
+          Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                image: const AssetImage(
+                  'assets/images/splash/1.jpg',
+                ),
+                colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(0.8), BlendMode.modulate),
+                fit: BoxFit.cover,
+              )),
+              child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        stops: const [
+                      0.2,
+                      0.9
+                    ],
+                        colors: [
+                      Colors.black.withOpacity(.6),
+                      Colors.black.withOpacity(.1),
+                    ])),
+              )),
           Positioned(
             left: 80,
             top: 400,
             child: Column(
-              children: [
+              children: const [
                 Text(
                   'EMARK',
                   style: Splash_textStyle,
