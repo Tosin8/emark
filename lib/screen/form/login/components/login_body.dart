@@ -1,4 +1,7 @@
+import 'package:emark/widgets/constants.dart';
+import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -52,7 +55,31 @@ class _SignInFormState extends State<SignInForm> {
             decoration: InputDecoration(
               labelText: 'Email',
               hintText: 'Enter your email',
-              enabledBorder: OutlineInputBorder(),
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(28),
+                borderSide: const BorderSide(color: kTextColor),
+                gapPadding: 10,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(28),
+                borderSide: const BorderSide(color: kTextColor),
+                gapPadding: 10,
+              ),
+              suffixIcon: Padding(
+                padding: EdgeInsets.fromLTRB(
+                  0,
+                  getProportionateScreenWidth(20),
+                  getProportionateScreenWidth(20),
+                  getProportionateScreenWidth(20),
+                ),
+                child: SvgPicture.asset(
+                  'assets/icons/mail.svg',
+                  height: getProportionateScreenWidth(18),
+                ),
+              ),
             ),
           )
         ],
