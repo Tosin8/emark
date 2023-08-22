@@ -1,3 +1,4 @@
+import 'package:emark/routes.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,9 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }

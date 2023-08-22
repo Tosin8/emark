@@ -39,11 +39,11 @@ class _SplashBodyState extends State<SplashBody> {
                       Colors.black.withOpacity(.1),
                     ])),
               )),
-          Positioned(
+          const Positioned(
             left: 80,
             top: 400,
             child: Column(
-              children: const [
+              children: [
                 Text(
                   'EMARK',
                   style: Splash_textStyle,
@@ -65,7 +65,7 @@ class _SplashBodyState extends State<SplashBody> {
               ],
             ),
           ),
-          SplashButton()
+          const SplashButton(),
         ],
       ),
     );
