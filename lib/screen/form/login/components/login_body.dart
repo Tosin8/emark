@@ -2,6 +2,7 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../widgets/size_config.dart';
 import 'login_widget.dart';
 
 class LoginBody extends StatefulWidget {
@@ -17,20 +18,26 @@ class _LoginBodyState extends State<LoginBody> {
     return const SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Column(
-          children: [
-            Text(
-              'Welcome Back',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  'Welcome Back',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Sign in with your email and password or \n continue with your social media accounts',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 35),
+                SignInForm(),
+              ],
             ),
-            SizedBox(height: 5),
-            Text(
-              'Sign in with your email and password or \n continue with your social media accounts',
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 15),
-            SignInForm(),
-          ],
+          ),
         ),
       ),
     );
@@ -192,18 +199,23 @@ class _SignInFormState extends State<SignInForm> {
                       }),
                   const Text('Remember Me'),
                   const Spacer(),
-                  const Text(
-                    'Forgot Password',
-                    style: TextStyle(decoration: TextDecoration.underline),
+                  GestureDetector(
+                    onTap: () {
+                      print('forgot password has been pressed');
+                    },
+                    child: const Text(
+                      'Forgot Password',
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
                   )
                 ],
               ),
               FormError(errors: errors),
               const SizedBox(height: 20),
               FormButton(formKey: _formKey),
-              SizedBox(height: 15),
-              Divider(),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
+              const Divider(),
+              const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -220,37 +232,30 @@ class _SignInFormState extends State<SignInForm> {
                     press: () {},
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  GestureDetector(
+                    child: const Text(
+                      "Sign Up ",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kPrimaryColor,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                ],
               )
             ],
           ),
         ));
-  }
-}
-
-class SocialCard extends StatelessWidget {
-  const SocialCard({
-    super.key,
-    required this.icon,
-    required this.press,
-  });
-
-  final String icon;
-  final Function press;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press(),
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15),
-        padding: const EdgeInsets.all(12),
-        height: 40,
-        width: 40,
-        decoration: const BoxDecoration(
-          color: Color(0xfff5f6f9),
-          shape: BoxShape.circle,
-        ),
-        child: SvgPicture.asset(icon),
-      ),
-    );
   }
 }
