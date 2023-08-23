@@ -115,6 +115,7 @@ class _SignInFormState extends State<SignInForm> {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                onSaved: (newValue) => password = newValue!,
                 onChanged: (value) {
                   if (value.isNotEmpty && errors.contains(kPassNullError)) {
                     setState(() {
