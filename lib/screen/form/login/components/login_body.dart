@@ -94,7 +94,7 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               TextFormField(
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
@@ -129,11 +129,13 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               FormError(errors: errors),
               GestureDetector(
                 onTap: () {
-                  print('button has been tapped');
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState?.save();
+                  }
                 },
                 child: Container(
                   width: 350,
@@ -176,7 +178,7 @@ class FormError extends StatelessWidget {
   Row formErrorText({required String error}) {
     return Row(
       children: [
-        SvgPicture.asset('assets/icons.Error.svg', height: 14, width: 14),
+        SvgPicture.asset('assets/icons/error.svg', height: 14, width: 14),
         const SizedBox(width: 10),
         Text(error),
       ],
