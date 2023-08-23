@@ -58,9 +58,9 @@ class _SignInFormState extends State<SignInForm> {
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 validator: (value) {
-                  if (value!.isEmpty) {
+                  if (value!.isEmpty && !errors.contains(kEmailNullError)) {
                     setState(() {
-                      errors.add('Please enter your mail');
+                      errors.add(kEmailNullError);
                     });
                   }
                   return null;
