@@ -115,6 +115,19 @@ class _SignInFormState extends State<SignInForm> {
               ),
               const SizedBox(height: 15),
               TextFormField(
+                onChanged: (value) {
+                  if (value.isNotEmpty && errors.contains(kPassNullError)) {
+                    setState(() {
+                      errors.remove(kPassNullError);
+                    });
+                  } else if (value.length < 8 &&
+                      !errors.contains(kShortPassError)) {
+                    setState(() {
+                      errors.remove(kShortPassError);
+                    });
+                  }
+                  return null;
+                },
                 validator: (value) {
                   if (value!.isEmpty && !errors.contains(kPassNullError)) {
                     setState(() {
