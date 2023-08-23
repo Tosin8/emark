@@ -48,6 +48,7 @@ class _SignInFormState extends State<SignInForm> {
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
+  bool remember = false;
 
   final List<String> errors = [];
 
@@ -179,11 +180,16 @@ class _SignInFormState extends State<SignInForm> {
                 ),
               ),
               const SizedBox(height: 20),
-              FormError(errors: errors),
-              const SizedBox(height: 15),
               Row(
                 children: [
-                  Checkbox(value: false, onChanged: (value) {}),
+                  Checkbox(
+                      value: remember,
+                      activeColor: kPrimaryColor,
+                      onChanged: (value) {
+                        setState(() {
+                          remember = value!;
+                        });
+                      }),
                   const Text('Remember Me'),
                   const Spacer(),
                   const Text(
@@ -192,10 +198,59 @@ class _SignInFormState extends State<SignInForm> {
                   )
                 ],
               ),
+              FormError(errors: errors),
               const SizedBox(height: 20),
-              FormButton(formKey: _formKey)
+              FormButton(formKey: _formKey),
+              SizedBox(height: 15),
+              Divider(),
+              SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialCard(
+                    icon: 'assets/icons/google-icon.svg',
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: 'assets/icons/facebook-2.svg',
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: 'assets/icons/twitter.svg',
+                    press: () {},
+                  ),
+                ],
+              )
             ],
           ),
         ));
+  }
+}
+
+class SocialCard extends StatelessWidget {
+  const SocialCard({
+    super.key,
+    required this.icon,
+    required this.press,
+  });
+
+  final String icon;
+  final Function press;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press(),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.all(12),
+        height: 40,
+        width: 40,
+        decoration: const BoxDecoration(
+          color: Color(0xfff5f6f9),
+          shape: BoxShape.circle,
+        ),
+        child: SvgPicture.asset(icon),
+      ),
+    );
   }
 }

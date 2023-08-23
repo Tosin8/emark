@@ -1,3 +1,4 @@
+import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -21,7 +22,7 @@ class FormButton extends StatelessWidget {
         width: 350,
         height: 55,
         decoration: BoxDecoration(
-          color: Colors.lightBlue,
+          color: kPrimaryColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: const Center(
