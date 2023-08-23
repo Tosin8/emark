@@ -57,12 +57,14 @@ class _SignInFormState extends State<SignInForm> {
             children: [
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 validator: (value) {
                   if (value!.isEmpty) {
                     setState(() {
-                      errors.add('Please enter a valid email address');
+                      errors.add('Please enter your mail');
                     });
                   }
+                  return null;
                 },
                 decoration: InputDecoration(
                   labelText: 'Email',
@@ -126,18 +128,23 @@ class _SignInFormState extends State<SignInForm> {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
-                width: 350,
-                height: 55,
-                decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: const Center(
-                  child: Text(
-                    'CONTINUE',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  print('button has been tapped');
+                },
+                child: Container(
+                  width: 350,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'CONTINUE',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               )
