@@ -353,7 +353,7 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextFormField(
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.done,
@@ -411,7 +411,7 @@ class _SignInFormState extends State<SignInForm> {
                 ],
               ),
               const SizedBox(
-                height: 40,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -433,7 +433,8 @@ class _SignInFormState extends State<SignInForm> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ));
