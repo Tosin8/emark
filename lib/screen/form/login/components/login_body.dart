@@ -168,14 +168,17 @@ class FormError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      children: List.generate(
+          errors.length, (index) => formErrorText(error: errors[index])),
+    );
+  }
+
+  Row formErrorText({required String error}) {
+    return Row(
       children: [
-        Row(
-          children: [
-            SvgPicture.asset('assets/icons.Error.svg', height: 14, width: 14),
-            const SizedBox(width: 10),
-            Text(errors[0]),
-          ],
-        ),
+        SvgPicture.asset('assets/icons.Error.svg', height: 14, width: 14),
+        const SizedBox(width: 10),
+        Text(error),
       ],
     );
   }
