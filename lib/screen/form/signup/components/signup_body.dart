@@ -316,11 +316,15 @@ class _SignInFormState extends State<SignInForm> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                keyboardType: TextInputType.name,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
                   labelText: 'Phone Number',
-                  //prefixIcon: ,
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Image.asset('assets/icons/nigeria.png'),
+                  ),
                   hintText: '+234',
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   contentPadding:
@@ -342,12 +346,46 @@ class _SignInFormState extends State<SignInForm> {
                         // getProportionateScreenWidth(20),
                         ),
                     child: SvgPicture.asset(
-                      'assets/icons/user.svg',
+                      'assets/icons/phone.svg',
                       // height: getProportionateScreenWidth(18),
                     ),
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              TextFormField(
+                keyboardType: TextInputType.name,
+                textInputAction: TextInputAction.next,
+                decoration: InputDecoration(
+                  labelText: 'Delivery Address',
+                  hintText: 'Enter a delivery address',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/location_point.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
               FormError(errors: errors),
               const SizedBox(height: 20),
               FormButton(formKey: _formKey),
