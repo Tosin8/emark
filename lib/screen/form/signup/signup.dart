@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'components/signup_body.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
-  static String routeName = '/signin';
+  static String routeName = '/signup';
   @override
-  State<SignUp> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
@@ -22,7 +25,7 @@ class _SignUpState extends State<SignUp> {
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
-        body: LoginBody(),
+        body: SignUpBody(),
       ),
     );
   }

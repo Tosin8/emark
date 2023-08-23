@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../widgets/size_config.dart';
+import '../../signup/signup.dart';
 import 'login_widget.dart';
 
 class LoginBody extends StatefulWidget {
@@ -246,6 +247,9 @@ class _SignInFormState extends State<SignInForm> {
                     style: TextStyle(fontSize: 16),
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.popAndPushNamed(context, SignUp.routeName);
+                    },
                     child: const Text(
                       "Sign Up ",
                       style: TextStyle(
