@@ -56,6 +56,14 @@ class _SignInFormState extends State<SignInForm> {
           child: Column(
             children: [
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    setState(() {
+                      errors.add('Please enter a valid email address');
+                    });
+                  }
+                },
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter your email',
