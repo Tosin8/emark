@@ -120,8 +120,8 @@ class _SignInFormState extends State<SignInForm> {
                     setState(() {
                       errors.remove(kPassNullError);
                     });
-                  } else if (value.length < 8 &&
-                      !errors.contains(kShortPassError)) {
+                  } else if (value.length >= 8 &&
+                      errors.contains(kShortPassError)) {
                     setState(() {
                       errors.remove(kShortPassError);
                     });
