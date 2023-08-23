@@ -57,16 +57,26 @@ class _SignInFormState extends State<SignInForm> {
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                validator: (value) {
-                  if (value!.isEmpty && !errors.contains(kEmailNullError)) {
+                onChanged: (value) {
+                  if (value.isNotEmpty && errors.contains(kEmailNullError)) {
                     setState(() {
-                      errors.add(kEmailNullError);
+                      errors.remove(kEmailNullError);
                     });
                   } else if (!emailValidatorRegExp.hasMatch(value) &&
-                      !errors.contains(kInvalidEmailError)) {
+                      errors.contains(kInvalidEmailError)) {
                     setState(() {
-                      errors.add(kInvalidEmailError);
+                      errors.remove(kInvalidEmailError);
                     });
+                  }
+                  return null;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    errors.add(kEmailNullError);
+                    return '';
+                  } else if (!emailValidatorRegExp.hasMatch(value)) {
+                    errors.add(kInvalidEmailError);
+                    return '';
                   }
                   return null;
                 },
