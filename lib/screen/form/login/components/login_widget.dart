@@ -2,6 +2,8 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../home/home.dart';
+
 class FormButton extends StatelessWidget {
   const FormButton({
     super.key,
@@ -18,6 +20,7 @@ class FormButton extends StatelessWidget {
           _formKey.currentState?.save();
 
           // if all is valid , then go to homepage
+          Navigator.pushNamed(context, Home.routeName);
         }
       },
       child: Container(
