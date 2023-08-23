@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Sign In',
+            'Sign Up',
             style: TextStyle(fontSize: 18, color: Color(0xff888888)),
           ),
           centerTitle: true,

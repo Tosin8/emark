@@ -24,15 +24,15 @@ class _SignUpBodyState extends State<SignUpBody> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  'Welcome Back',
+                  'Complete Profile',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 Text(
-                  'Sign in with your email and password or \n continue with your social media accounts',
+                  'Complete your details or continue \n with your social media accounts',
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 35),
+                SizedBox(height: 20),
                 SignInForm(),
               ],
             ),
@@ -122,7 +122,73 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
+              TextFormField(
+                keyboardType: TextInputType.name,
+                textInputAction: TextInputAction.next,
+                decoration: InputDecoration(
+                  labelText: 'First Name',
+                  hintText: 'Enter your first name',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/user.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              TextFormField(
+                keyboardType: TextInputType.name,
+                textInputAction: TextInputAction.next,
+                decoration: InputDecoration(
+                  labelText: 'Last Name',
+                  hintText: 'Your last name is your surname',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/user.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
               TextFormField(
                 onSaved: (newValue) => password = newValue!,
                 onChanged: (value) {
@@ -152,7 +218,7 @@ class _SignInFormState extends State<SignInForm> {
                   return null;
                 },
                 keyboardType: TextInputType.visiblePassword,
-                textInputAction: TextInputAction.done,
+                textInputAction: TextInputAction.next,
 
                 obscureText: true, // turning it into a password key.
 
@@ -185,7 +251,103 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
+              const SizedBox(height: 15),
+              TextFormField(
+                onSaved: (newValue) => password = newValue!,
+                onChanged: (value) {
+                  if (value.isNotEmpty && errors.contains(kPassNullError)) {
+                    setState(() {
+                      errors.remove(kPassNullError);
+                    });
+                  } else if (value.length >= 8 &&
+                      errors.contains(kShortPassError)) {
+                    setState(() {
+                      errors.remove(kShortPassError);
+                    });
+                  }
+                  return null;
+                },
+                validator: (value) {
+                  if (value!.isEmpty && !errors.contains(kPassNullError)) {
+                    setState(() {
+                      errors.add(kPassNullError);
+                    });
+                  } else if (value.length < 8 &&
+                      !errors.contains(kShortPassError)) {
+                    setState(() {
+                      errors.add(kShortPassError);
+                    });
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.next,
+
+                obscureText: true, // turning it into a password key.
+
+                decoration: InputDecoration(
+                  labelText: 'Repeat Password',
+                  hintText: 'Repeat your password',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/lock.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
+              TextFormField(
+                keyboardType: TextInputType.name,
+                textInputAction: TextInputAction.next,
+                decoration: InputDecoration(
+                  labelText: 'Phone Number',
+                  //prefixIcon: ,
+                  hintText: '+234',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/user.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
               FormError(errors: errors),
               const SizedBox(height: 20),
               FormButton(formKey: _formKey),
