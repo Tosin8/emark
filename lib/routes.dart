@@ -6,5 +6,5 @@ import 'package:flutter/material.dart';
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   SignIn.routeName: (context) => const SignIn(),
-  ForgotPassword.routeName:(context) => ForgotPassword(),
+  ForgotPassword.routeName:(context) => const ForgotPassword(),
 };

@@ -1,3 +1,4 @@
+import 'package:emark/screen/form/forgot_pass/forgot_pass.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -201,7 +202,8 @@ class _SignInFormState extends State<SignInForm> {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      print('forgot password has been pressed');
+                      Navigator.popAndPushNamed(
+                          context, ForgotPassword.routeName);
                     },
                     child: const Text(
                       'Forgot Password',
