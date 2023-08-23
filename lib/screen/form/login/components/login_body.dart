@@ -1,5 +1,4 @@
 import 'package:emark/widgets/constants.dart';
-import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -95,8 +94,11 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.done,
+
                 obscureText: true, // turning it into a password key.
                 decoration: InputDecoration(
                   labelText: 'Password',
@@ -127,7 +129,8 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
+              FormError(errors: errors),
               GestureDetector(
                 onTap: () {
                   print('button has been tapped');
@@ -151,5 +154,29 @@ class _SignInFormState extends State<SignInForm> {
             ],
           ),
         ));
+  }
+}
+
+class FormError extends StatelessWidget {
+  const FormError({
+    super.key,
+    required this.errors,
+  });
+
+  final List<String> errors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            SvgPicture.asset('assets/icons.Error.svg', height: 14, width: 14),
+            const SizedBox(width: 10),
+            Text(errors[0]),
+          ],
+        ),
+      ],
+    );
   }
 }
