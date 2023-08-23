@@ -180,6 +180,18 @@ class _SignInFormState extends State<SignInForm> {
               ),
               const SizedBox(height: 20),
               FormError(errors: errors),
+              const SizedBox(height: 15),
+              Row(
+                children: [
+                  Checkbox(value: false, onChanged: (value) {}),
+                  const Text('Remember Me'),
+                  const Spacer(),
+                  const Text(
+                    'Forgot Password',
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  )
+                ],
+              ),
               const SizedBox(height: 20),
               FormButton(formKey: _formKey)
             ],
