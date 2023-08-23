@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../login/components/login_widget.dart';
+import '../../login/login.dart';
 
 class SignUpBody extends StatefulWidget {
   const SignUpBody({super.key});
@@ -355,7 +356,7 @@ class _SignInFormState extends State<SignInForm> {
               SizedBox(height: 20),
               TextFormField(
                 keyboardType: TextInputType.name,
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 decoration: InputDecoration(
                   labelText: 'Delivery Address',
                   hintText: 'Enter a delivery address',
@@ -416,12 +417,15 @@ class _SignInFormState extends State<SignInForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Don't have an account? ",
+                    "Already have an Account ",
                     style: TextStyle(fontSize: 16),
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.popAndPushNamed(context, SignIn.routeName);
+                    },
                     child: const Text(
-                      "Sign Up ",
+                      "Log In",
                       style: TextStyle(
                           fontSize: 16,
                           color: kPrimaryColor,
