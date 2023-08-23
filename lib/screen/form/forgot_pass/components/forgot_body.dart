@@ -3,6 +3,8 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'forgot_widget.dart';
+
 class ForgotBody extends StatefulWidget {
   const ForgotBody({super.key});
 
@@ -116,8 +118,8 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              FormButton(formKey: _formKey),
+              const SizedBox(height: 60),
+              FormButtonForgot(formKey: _formKey),
               SizedBox(height: 20),
               Divider(),
               SizedBox(height: 20),
