@@ -2,6 +2,8 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'login_widget.dart';
+
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
 
@@ -113,7 +115,7 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
               TextFormField(
                 onSaved: (newValue) => password = newValue!,
                 onChanged: (value) {
@@ -176,59 +178,12 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
               FormError(errors: errors),
-              GestureDetector(
-                onTap: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState?.save();
-                  }
-                },
-                child: Container(
-                  width: 350,
-                  height: 55,
-                  decoration: BoxDecoration(
-                    color: Colors.lightBlue,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'CONTINUE',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              )
+              const SizedBox(height: 20),
+              FormButton(formKey: _formKey)
             ],
           ),
         ));
-  }
-}
-
-class FormError extends StatelessWidget {
-  const FormError({
-    super.key,
-    required this.errors,
-  });
-
-  final List<String> errors;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(
-          errors.length, (index) => formErrorText(error: errors[index])),
-    );
-  }
-
-  Row formErrorText({required String error}) {
-    return Row(
-      children: [
-        SvgPicture.asset('assets/icons/error.svg', height: 14, width: 14),
-        const SizedBox(width: 10),
-        Text(error),
-      ],
-    );
   }
 }
