@@ -1,4 +1,7 @@
+import 'package:emark/screen/form/login/components/login_widget.dart';
+import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ForgotBody extends StatefulWidget {
   const ForgotBody({super.key});
@@ -47,8 +50,95 @@ class ForgotPassForm extends StatefulWidget {
 }
 
 class _ForgotPassFormState extends State<ForgotPassForm> {
+  final _formKey = GlobalKey<FormState>();
+  late String email;
+  final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(
+        key: _formKey,
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(children: [
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.done,
+                onSaved: (newValue) => email = newValue!,
+                onChanged: (value) {
+                  if (value.isNotEmpty && errors.contains(kEmailNullError)) {
+                    setState(() {
+                      errors.remove(kEmailNullError);
+                    });
+                  } else if (!emailValidatorRegExp.hasMatch(value) &&
+                      errors.contains(kInvalidEmailError)) {
+                    setState(() {
+                      errors.remove(kInvalidEmailError);
+                    });
+                  }
+                  return null;
+                },
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    errors.add(kEmailNullError);
+                    return '';
+                  } else if (!emailValidatorRegExp.hasMatch(value)) {
+                    errors.add(kInvalidEmailError);
+                    return '';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'Enter your email',
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(28),
+                    borderSide: const BorderSide(color: kTextColor),
+                    gapPadding: 10,
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 20, 20
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        // getProportionateScreenWidth(20),
+                        ),
+                    child: SvgPicture.asset(
+                      'assets/icons/mail.svg',
+                      // height: getProportionateScreenWidth(18),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              FormButton(formKey: _formKey),
+              SizedBox(height: 20),
+              Divider(),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  GestureDetector(
+                    child: const Text(
+                      "Sign Up ",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kPrimaryColor,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                ],
+              )
+            ])));
   }
 }
