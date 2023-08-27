@@ -1,6 +1,7 @@
 import 'package:emark/widgets/constants.dart';
 import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -41,15 +42,27 @@ class _BodyState extends State<Body> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     )),
               ),
-              Container(
-                padding: const EdgeInsets.all(12),
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: kSecondaryColor.withOpacity(0.7),
-                  shape: BoxShape.circle,
+              Stack(children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: kSecondaryColor.withOpacity(0.7),
+                    shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset('assets/icons/bell.svg'),
                 ),
-              )
+                Container(
+                  height: 16,
+                  width: 16,
+                  decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Text('1'),
+                ),
+              ]),
             ],
           ),
         )
