@@ -7,9 +7,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(
-      child: Text('Welcome to HomePage'),
-    ));
+    return Scaffold(
+      body: Body(),
+    );
   }
 }
