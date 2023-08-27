@@ -55,6 +55,9 @@ class _BodyState extends State<Body> {
 class IconBtwCounter extends StatelessWidget {
   const IconBtwCounter({
     super.key,
+    required this.svgSrc,
+    required this.numOfItems,
+    required this.press,
   });
 
   final String svgSrc;
@@ -75,7 +78,7 @@ class IconBtwCounter extends StatelessWidget {
             color: kSecondaryColor.withOpacity(0.7),
             shape: BoxShape.circle,
           ),
-          child: SvgPicture.asset('assets/icons/bell.svg'),
+          child: SvgPicture.asset(svgSrc),
         ),
         Positioned(
           top: -3,
@@ -90,7 +93,7 @@ class IconBtwCounter extends StatelessWidget {
             ),
             child: const Center(
               child: Text(
-                '1',
+                'numOfItems',
                 style: TextStyle(
                     fontSize: 10,
                     height: 1,
