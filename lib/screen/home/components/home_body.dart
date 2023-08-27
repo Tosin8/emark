@@ -43,7 +43,11 @@ class _BodyState extends State<Body> {
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     )),
               ),
-              IconBtwCounter(),
+              IconBtwCounter(
+                svgSrc: 'assets/icons/bell.svg',
+                numOfItems: 3,
+                press: () {},
+              ),
             ],
           ),
         )
@@ -91,10 +95,10 @@ class IconBtwCounter extends StatelessWidget {
               shape: BoxShape.circle,
               border: Border.all(width: 1.5, color: Colors.white),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                'numOfItems',
-                style: TextStyle(
+                '$numOfItems',
+                style: const TextStyle(
                     fontSize: 10,
                     height: 1,
                     color: Colors.white,
