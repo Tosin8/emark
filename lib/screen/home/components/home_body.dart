@@ -25,7 +25,14 @@ class _BodyState extends State<Body> {
                 height: 50,
                 decoration: BoxDecoration(
                   color: kSecondaryColor.withOpacity(0.7),
+                  borderRadius: BorderRadius.circular(15),
                 ),
+                child: TextField(
+                    decoration: InputDecoration(
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  hintText: 'Search Products',
+                )),
               )
             ],
           ),
