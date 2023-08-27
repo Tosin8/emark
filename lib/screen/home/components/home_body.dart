@@ -10,6 +10,14 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+        child: SingleChildScrollView(
+            child: Column(
+      children: [
+        Row(
+          children: [Container()],
+        )
+      ],
+    )));
   }
 }
