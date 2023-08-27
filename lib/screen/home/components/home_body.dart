@@ -19,6 +19,7 @@ class _BodyState extends State<Body> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: 250,
@@ -39,6 +40,15 @@ class _BodyState extends State<Body> {
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     )),
+              ),
+              Container(
+                padding: const EdgeInsets.all(12),
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: kSecondaryColor.withOpacity(0.7),
+                  shape: BoxShape.circle,
+                ),
               )
             ],
           ),
