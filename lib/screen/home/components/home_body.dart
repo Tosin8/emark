@@ -1,3 +1,5 @@
+import 'package:emark/widgets/constants.dart';
+import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -14,8 +16,19 @@ class _BodyState extends State<Body> {
         child: SingleChildScrollView(
             child: Column(
       children: [
-        Row(
-          children: [Container()],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              Container(
+                width: 250,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: kSecondaryColor.withOpacity(0.7),
+                ),
+              )
+            ],
+          ),
         )
       ],
     )));
