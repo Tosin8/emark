@@ -76,6 +76,13 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> categories = [
+      {'ion': 'assets/icons/flash_icon.svg', 'text': 'Flash Deal'},
+      {'ion': 'assets/icons/bill_icon.svg', 'text': 'Bill'},
+      {'ion': 'assets/icon/game_icon.svg', 'text': 'Game'},
+      {'ion': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
+      {'ion': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
+    ];
     return Container();
   }
 }
