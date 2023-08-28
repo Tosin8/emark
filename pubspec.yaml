@@ -113,6 +113,24 @@ flutter:
      - assets/icons/user_icon.svg
      - assets/icons/user.svg
      - assets/icons/nigeria.png
+     - assets/images/products/glap.png
+     - assets/images/products/image_popular_product_3.png
+     - assets/images/products/image_banner_2.png
+     - assets/images/products/image_popular_product_1.png
+     - assets/images/products/image_popular_product_2.png
+     - assets/images/products/image_popular_product_3.png
+     - assets/images/products/product_1_image.png
+     - assets/images/products/ps4_console_blue_1.png
+     - assets/images/products/ps4_console_blue_2.png
+     - assets/images/products/ps4_console_blue_3.png
+     - assets/images/products/ps4_console_blue_4.png
+     - assets/images/products/ps4_console_white_1.png
+     - assets/images/products/ps4_console_white_2.png
+     - assets/images/products/ps4_console_white_3.png
+     - assets/images/products/ps4_console_white_4.png
+     - assets/images/products/shoes2.png
+     - assets/images/products/tshirt.png
+     - assets/images/products/wireless_headset.png
 
 
 

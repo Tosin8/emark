@@ -24,14 +24,14 @@ class _BodyState extends State<Body> {
         DiscountBanner(),
         SizedBox(height: 20),
         Categories(),
-        Row(
-          children: [
-            Text(
-              'Special for you',
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            ),
-            Text('See More'),
-          ],
+        SizedBox(height: 30),
+        SectionTitle(
+          text: 'Special for you',
+          press: () {},
+        ),
+        SizedBox(
+          width: 242,
+          height: 100,
         )
       ],
     )));
