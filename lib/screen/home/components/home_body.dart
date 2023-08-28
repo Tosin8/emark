@@ -23,6 +23,7 @@ class _BodyState extends State<Body> {
         HomeHeader(),
         SizedBox(height: 20),
         DiscountBanner(),
+        SizedBox(height: 20),
         Categories(),
       ],
     )));
@@ -84,10 +85,21 @@ class _CategoriesState extends State<Categories> {
       {'ion': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
     ];
     return SizedBox(
-        width: 50,
-        child: AspectRatio(
+        //width: 50,
+        child: Column(
+      children: [
+        AspectRatio(
           aspectRatio: 1,
-          child: Container(),
-        ));
+          child: Container(
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: Color(0xffffecdf),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: SvgPicture.asset(categories[0]['icon']),
+          ),
+        ),
+      ],
+    ));
   }
 }
