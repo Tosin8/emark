@@ -21,37 +21,11 @@ class _BodyState extends State<Body> {
       children: [
         SizedBox(height: 20),
         HomeHeader(),
-        SizedBox(height: 10),
-        DiscountBanner()
+        SizedBox(height: 20),
+        DiscountBanner(),
+        Categories(),
       ],
     )));
-  }
-}
-
-class DiscountBanner extends StatelessWidget {
-  const DiscountBanner({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        width: double.infinity,
-        height: 90,
-        decoration: BoxDecoration(
-          color: const Color(0xff4a3298),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: const Text.rich(TextSpan(
-            text: 'A Summer Surprise\n',
-            style: TextStyle(color: Colors.white),
-            children: [
-              TextSpan(
-                  text: 'CashBack 20%',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            ])));
   }
 }
 
@@ -89,5 +63,19 @@ class HomeHeader extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class Categories extends StatefulWidget {
+  const Categories({super.key});
+
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
