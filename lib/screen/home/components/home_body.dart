@@ -1,5 +1,4 @@
 import 'package:emark/widgets/constants.dart';
-import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,7 +14,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
         child: SingleChildScrollView(
             child: Column(
       children: [
@@ -78,11 +77,11 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {'ion': 'assets/icons/flash_icon.svg', 'text': 'Flash Deal'},
-      {'ion': 'assets/icons/bill_icon.svg', 'text': 'Bill'},
-      {'ion': 'assets/icon/game_icon.svg', 'text': 'Game'},
-      {'ion': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
-      {'ion': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
+      {'icon': 'assets/icons/flash_icon.svg', 'text': 'Flash Deal'},
+      {'icon': 'assets/icons/bill_icon.svg', 'text': 'Bill'},
+      {'icon': 'assets/icon/game_icon.svg', 'text': 'Game'},
+      {'icon': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
+      {'icon': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
     ];
     return SizedBox(
         //width: 50,
