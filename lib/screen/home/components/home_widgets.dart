@@ -2,6 +2,8 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../models/product.dart';
+
 class IconBtwCounter extends StatelessWidget {
   const IconBtwCounter({
     super.key,
@@ -342,6 +344,80 @@ class SpecialOfferCard extends StatelessWidget {
               ),
             ]),
           )),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    super.key,
+    this.width = 140,
+    this.aspectRetion = 1.02,
+    required this.product,
+  });
+
+  final double width, aspectRetion;
+  final Product product;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: SizedBox(
+        width: width,
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: aspectRetion,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: kSecondaryColor.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Image.asset(product.images[0]),
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              product.title,
+              style: TextStyle(color: Colors.black),
+              maxLines: 2,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '\$${product.price}',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: kPrimaryColor),
+                ),
+                InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                        color: product.isFavorite
+                            ? kPrimaryColor.withOpacity(0.5)
+                            : kSecondaryColor.withOpacity(0.51),
+                        shape: BoxShape.circle),
+                    child: SvgPicture.asset(
+                      'assets/icons/heart_Icon_2.svg',
+                      color: product.isFavorite
+                          ? Color(0xffff4848)
+                          : Color(0xffd8dee4),
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
