@@ -15,33 +15,43 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
         child: SingleChildScrollView(
             child: Column(
       children: [
-        const SizedBox(height: 20),
-        const HomeHeader(),
-        const SizedBox(height: 10),
-        Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            width: double.infinity,
-            height: 90,
-            decoration: BoxDecoration(
-              color: const Color(0xff4a3298),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: const Text.rich(TextSpan(
-                text: 'A Summer Surprise\n',
-                style: TextStyle(color: Colors.white),
-                children: [
-                  TextSpan(
-                      text: 'CashBack 20%',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                ])))
+        SizedBox(height: 20),
+        HomeHeader(),
+        SizedBox(height: 10),
+        DiscountBanner()
       ],
     )));
+  }
+}
+
+class DiscountBanner extends StatelessWidget {
+  const DiscountBanner({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        width: double.infinity,
+        height: 90,
+        decoration: BoxDecoration(
+          color: const Color(0xff4a3298),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: const Text.rich(TextSpan(
+            text: 'A Summer Surprise\n',
+            style: TextStyle(color: Colors.white),
+            children: [
+              TextSpan(
+                  text: 'CashBack 20%',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            ])));
   }
 }
 
