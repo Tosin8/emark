@@ -83,6 +83,25 @@ class _CategoriesState extends State<Categories> {
       {'icon': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
       {'icon': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
     ];
+    return CategoryCard(categories: categories);
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.press,
+  });
+
+  //final List<Map<String, dynamic>> categories;
+
+  final String icon, text;
+  final GestureTapCallback press;
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
         width: 50,
         child: Column(
