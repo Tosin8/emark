@@ -30,9 +30,25 @@ class _BodyState extends State<Body> {
           press: () {},
         ),
         SizedBox(
-          width: 242,
-          height: 100,
-        )
+            width: 242,
+            height: 100,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(children: [
+                Image.asset('assets/images/products/image_banner_2.png',
+                    fit: BoxFit.cover),
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                        Color(0xff343434).withOpacity(0.4),
+                        Color(0xff343434).withOpacity(0.15),
+                      ])),
+                )
+              ]),
+            ))
       ],
     )));
   }
