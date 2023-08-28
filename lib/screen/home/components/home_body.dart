@@ -79,11 +79,22 @@ class _CategoriesState extends State<Categories> {
     List<Map<String, dynamic>> categories = [
       {'icon': 'assets/icons/flash_icon.svg', 'text': 'Flash Deal'},
       {'icon': 'assets/icons/bill_icon.svg', 'text': 'Bill'},
-      {'icon': 'assets/icon/game_icon.svg', 'text': 'Game'},
+      {'icon': 'assets/icons/game_icon.svg', 'text': 'Game'},
       {'icon': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
       {'icon': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
     ];
-    return CategoryCard(categories: categories);
+    return Row(
+      children: [
+        ...List.generate(
+            categories.length,
+            (index) => CategoryCard(
+                icon: categories[index]['icon'],
+                text: categories[index]['text'],
+                press: () {}))
+      ],
+    );
+
+    //CategoryCard(categories: categories);
   }
 }
 
