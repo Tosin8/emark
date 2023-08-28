@@ -24,6 +24,15 @@ class _BodyState extends State<Body> {
         DiscountBanner(),
         SizedBox(height: 20),
         Categories(),
+        Row(
+          children: [
+            Text(
+              'Special for you',
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            ),
+            Text('See More'),
+          ],
+        )
       ],
     )));
   }
