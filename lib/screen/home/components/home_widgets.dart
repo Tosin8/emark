@@ -30,30 +30,52 @@ class IconBtwCounter extends StatelessWidget {
           ),
           child: SvgPicture.asset(svgSrc),
         ),
-        Positioned(
-          top: -3,
-          right: 0,
-          child: Container(
-            height: 16,
-            width: 16,
-            decoration: BoxDecoration(
-              color: kPrimaryColor,
-              shape: BoxShape.circle,
-              border: Border.all(width: 1.5, color: Colors.white),
-            ),
-            child: Center(
-              child: Text(
-                '$numOfItems',
-                style: const TextStyle(
-                    fontSize: 10,
-                    height: 1,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600),
+        if (numOfItems != 0)
+          Positioned(
+            top: -3,
+            right: 0,
+            child: Container(
+              height: 16,
+              width: 16,
+              decoration: BoxDecoration(
+                color: kPrimaryColor,
+                shape: BoxShape.circle,
+                border: Border.all(width: 1.5, color: Colors.white),
+              ),
+              child: Center(
+                child: Text(
+                  '$numOfItems',
+                  style: const TextStyle(
+                      fontSize: 10,
+                      height: 1,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
             ),
           ),
-        ),
       ]),
     );
+  }
+}
+
+class searchField extends StatelessWidget {
+  const searchField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+        onChanged: (value) {
+          // search value.
+        },
+        decoration: const InputDecoration(
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          hintText: 'Search Products',
+          prefixIcon: Icon(Icons.search),
+          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        ));
   }
 }

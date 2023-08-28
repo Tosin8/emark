@@ -32,18 +32,7 @@ class _BodyState extends State<Body> {
                   color: kSecondaryColor.withOpacity(0.7),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: TextField(
-                    onChanged: (value) {
-                      // search value.
-                    },
-                    decoration: const InputDecoration(
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintText: 'Search Products',
-                      prefixIcon: Icon(Icons.search),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                    )),
+                child: const searchField(),
               ),
               IconBtwCounter(
                 svgSrc: 'assets/icons/cart_icon.svg',
