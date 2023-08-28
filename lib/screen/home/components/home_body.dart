@@ -18,38 +18,63 @@ class _BodyState extends State<Body> {
         child: SingleChildScrollView(
             child: Column(
       children: [
-        SizedBox(height: 20),
-        HomeHeader(),
-        SizedBox(height: 20),
-        DiscountBanner(),
-        SizedBox(height: 20),
-        Categories(),
-        SizedBox(height: 30),
+        const SizedBox(height: 20),
+        const HomeHeader(),
+        const SizedBox(height: 20),
+        const DiscountBanner(),
+        const SizedBox(height: 20),
+        const Categories(),
+        const SizedBox(height: 30),
         SectionTitle(
           text: 'Special for you',
           press: () {},
         ),
-        SizedBox(
-            width: 242,
-            height: 100,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Stack(children: [
-                Image.asset('assets/images/products/image_banner_2.png',
-                    fit: BoxFit.cover),
-                Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                        Color(0xff343434).withOpacity(0.4),
-                        Color(0xff343434).withOpacity(0.15),
-                      ])),
-                )
-              ]),
-            ))
+        SpecialOfferCard()
       ],
     )));
+  }
+}
+
+class SpecialOfferCard extends StatelessWidget {
+  const SpecialOfferCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: 242,
+        height: 100,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Stack(children: [
+            Image.asset('assets/images/products/image_banner_2.png',
+                fit: BoxFit.cover),
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    const Color(0xff343434).withOpacity(0.4),
+                    const Color(0xff343434).withOpacity(0.15),
+                  ])),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Text.rich(
+                TextSpan(style: TextStyle(color: Colors.white), children: [
+                  TextSpan(
+                      text: 'Smartphone\n',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  TextSpan(text: '18 Brands'),
+                ]),
+              ),
+            ),
+          ]),
+        ));
   }
 }
