@@ -27,7 +27,22 @@ class _BodyState extends State<Body> {
         const SizedBox(height: 30),
         const SpeicialOffers(),
         const SizedBox(height: 20),
-        SectionTitle(text: 'Popular Product', press: () {})
+        SectionTitle(text: 'Popular Product', press: () {}),
+        Column(
+          children: [
+            SizedBox(
+              width: 140,
+              child: AspectRatio(
+                aspectRatio: 1.02,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: kSecondaryColor.withOpacity(0.1),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     )));
   }
