@@ -209,14 +209,14 @@ class CategoryCard extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Color(0xffffecdf),
+                    color: const Color(0xffffecdf),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: SvgPicture.asset(icon),
                   //(categories[0]['icon']),
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(
                 text,
                 // categories[0]['text'],
@@ -248,7 +248,7 @@ class SectionTitle extends StatelessWidget {
             text,
             style: const TextStyle(fontSize: 18, color: Colors.black),
           ),
-          GestureDetector(onTap: press, child: Text('See More')),
+          GestureDetector(onTap: press, child: const Text('See More')),
         ],
       ),
     );
@@ -380,7 +380,7 @@ class ProductCard extends StatelessWidget {
             const SizedBox(height: 5),
             Text(
               product.title,
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
               maxLines: 2,
             ),
             Row(
@@ -388,7 +388,7 @@ class ProductCard extends StatelessWidget {
               children: [
                 Text(
                   '\$${product.price}',
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor),
@@ -408,8 +408,8 @@ class ProductCard extends StatelessWidget {
                     child: SvgPicture.asset(
                       'assets/icons/heart_Icon_2.svg',
                       color: product.isFavorite
-                          ? Color(0xffff4848)
-                          : Color(0xffd8dee4),
+                          ? const Color(0xffff4848)
+                          : const Color(0xffd8dee4),
                     ),
                   ),
                 )
@@ -418,6 +418,32 @@ class ProductCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PopularProduct extends StatelessWidget {
+  const PopularProduct({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SectionTitle(text: 'Popular Product', press: () {}),
+        SizedBox(height: 20),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ...List.generate(demoProducts.length,
+                  (index) => ProductCard(product: demoProducts[index])),
+              const SizedBox(width: 20),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
