@@ -83,6 +83,11 @@ class _CategoriesState extends State<Categories> {
       {'ion': 'assets/icons/gift_icon.svg', 'text': 'Flash Deal'},
       {'ion': 'assets/icons/discover.svg', 'text': 'Flash Deal'},
     ];
-    return Container();
+    return SizedBox(
+        width: 50,
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Container(),
+        ));
   }
 }
