@@ -99,7 +99,10 @@ class _CategoriesState extends State<Categories> {
               ),
             ),
             SizedBox(height: 5),
-            Text(categories[0]['text']),
+            Text(
+              categories[0]['text'],
+              textAlign: TextAlign.center,
+            ),
           ],
         ));
   }
