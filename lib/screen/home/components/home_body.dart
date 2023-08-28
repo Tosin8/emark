@@ -102,27 +102,32 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: 50,
-        child: Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Color(0xffffecdf),
-                  borderRadius: BorderRadius.circular(10),
+    return GestureDetector(
+      onTap: press,
+      child: SizedBox(
+          width: 50,
+          child: Column(
+            children: [
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Color(0xffffecdf),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: SvgPicture.asset(icon),
+                  //(categories[0]['icon']),
                 ),
-                child: SvgPicture.asset(categories[0]['icon']),
               ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              categories[0]['text'],
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ));
+              SizedBox(height: 5),
+              Text(
+                text,
+                // categories[0]['text'],
+                textAlign: TextAlign.center,
+              ),
+            ],
+          )),
+    );
   }
 }
