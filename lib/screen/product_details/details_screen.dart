@@ -8,14 +8,33 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff5f6f9),
-      appBar: AppBar(
-          leading: SizedBox(
-              height: 40,
-              width: 40,
-              child: GestureDetector(
-                  onTap: () {}, child: const Icon(Icons.arrow_back_ios)))),
-    );
+        backgroundColor: Color(0xfff5f6f9),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: RoundedIconBtn(),
+        ));
+  }
+}
+
+class RoundedIconBtn extends StatelessWidget {
+  const RoundedIconBtn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: 40,
+        width: 40,
+        child: GestureDetector(
+            onTap: () {},
+            child: Container(
+                padding: EdgeInsets.zero,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: const Icon(Icons.arrow_back_ios))));
   }
 }
 
