@@ -1,5 +1,6 @@
-import 'package:emark/models/product.dart';
 import 'package:flutter/material.dart';
+
+import '../../models/product.dart';
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = '/details';
@@ -8,48 +9,23 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
         backgroundColor: Color(0xfff5f6f9),
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          leading: RoundedIconBtn(
-            iconData: Icons.arrow_back_ios,
-            press: () => Navigator.pop(context),
-          ),
-        ));
+        leading: SizedBox(
+            height: 40,
+            width: 40,
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(Icons.arrow_back_ios),
+            )),
+      ),
+    );
   }
 }
 
-class RoundedIconBtn extends StatelessWidget {
-  const RoundedIconBtn({
-    super.key,
-    required this.iconData,
-    required this.press,
-  });
-
-  final IconData iconData;
-  final GestureTapCallback press;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: 40,
-        width: 40,
-        child: GestureDetector(
-            onTap: press,
-            child: Container(
-                padding: EdgeInsets.zero,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Icon(iconData))));
-  }
-}
-
-// the need to pass the product to details screen , also to use name route to create a aarguments class.
+// the need to pass the product to the details screen, and to name the roue to create an arguments class.
 
 class ProductDetailsArguments {
   final Product product;
-
   ProductDetailsArguments({required this.product});
 }
