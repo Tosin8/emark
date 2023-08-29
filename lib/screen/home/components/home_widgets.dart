@@ -437,8 +437,11 @@ class PopularProduct extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              ...List.generate(demoProducts.length,
-                  (index) => ProductCard(product: demoProducts[index])),
+              ...List.generate(demoProducts.length, (index) {
+                if (demoProducts[index].isPopular)
+                  return ProductCard(product: demoProducts[index]);
+                return SizedBox.shrink();
+              }),
               const SizedBox(width: 20),
             ],
           ),
