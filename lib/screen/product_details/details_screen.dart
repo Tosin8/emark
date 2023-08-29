@@ -9,12 +9,12 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold();
   }
+}
 
-  // the need to pass the product to details screen , also to use name route to create a aarguments class.
+// the need to pass the product to details screen , also to use name route to create a aarguments class.
 
-  class ProductDetailsArguments{
-    final Product product; 
+class ProductDetailsArguments {
+  final Product product;
 
-    ProductDetailsArguments({this.product});
-  }
+  ProductDetailsArguments({required this.product});
 }
