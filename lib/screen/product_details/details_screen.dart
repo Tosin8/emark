@@ -11,7 +11,10 @@ class DetailsScreen extends StatelessWidget {
         backgroundColor: Color(0xfff5f6f9),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          leading: RoundedIconBtn(),
+          leading: RoundedIconBtn(
+            iconData: Icons.arrow_back_ios,
+            press: () => Navigator.pop(context),
+          ),
         ));
   }
 }
@@ -32,14 +35,14 @@ class RoundedIconBtn extends StatelessWidget {
         height: 40,
         width: 40,
         child: GestureDetector(
-            onTap: () {},
+            onTap: press,
             child: Container(
                 padding: EdgeInsets.zero,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(50),
                 ),
-                child: const Icon(Icons.arrow_back_ios))));
+                child: Icon(iconData))));
   }
 }
 
