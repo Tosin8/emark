@@ -1,3 +1,4 @@
+import 'package:emark/screen/product_details/details_screen.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -365,6 +366,7 @@ class ProductCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: GestureDetector(
+        onTap: press,
         child: SizedBox(
           width: width,
           child: Column(
@@ -436,14 +438,19 @@ class PopularProduct extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(text: 'Popular Product', press: () {}),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
               ...List.generate(demoProducts.length, (index) {
-                if (demoProducts[index].isPopular)
-                  return ProductCard(product: demoProducts[index]);
+                if (demoProducts[index].isPopular) {
+                  return ProductCard(
+                    product: demoProducts[index],
+                    press: () =>
+                        Navigator.pushNamed(context, DetailsScreen.routeName),
+                  );
+                }
                 return SizedBox.shrink();
               }),
               const SizedBox(width: 20),
