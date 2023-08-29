@@ -19,7 +19,12 @@ class DetailsScreen extends StatelessWidget {
 class RoundedIconBtn extends StatelessWidget {
   const RoundedIconBtn({
     super.key,
+    required this.iconData,
+    required this.press,
   });
+
+  final IconData iconData;
+  final GestureTapCallback press;
 
   @override
   Widget build(BuildContext context) {
