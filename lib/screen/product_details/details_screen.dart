@@ -7,7 +7,14 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+          leading: SizedBox(
+              height: 40,
+              width: 40,
+              child: GestureDetector(
+                  onTap: () {}, child: const Icon(Icons.arrow_back_ios)))),
+    );
   }
 }
 
