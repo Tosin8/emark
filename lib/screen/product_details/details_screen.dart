@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../models/product.dart';
+import 'body.dart';
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = '/details';
@@ -8,10 +10,12 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ProductDetailsArguments arguments =
+        ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xfff5f6f9),
+          backgroundColor: const Color(0xfff5f6f9),
           leading: const AppBarIconBtn(),
           actions: [
             Container(
@@ -19,14 +23,21 @@ class DetailsScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
                 decoration: BoxDecoration(
                   color: Colors.white,
+                  borderRadius: BorderRadius.circular(14),
                 ),
                 child: Row(
                   children: [
-                    Text('4.5'),
+                    const Text(
+                      '4.5',
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(width: 5),
+                    SvgPicture.asset('assets/icons/star_icon.svg')
                   ],
                 ))
           ],
         ),
+        body: DetailScreenBody(product: arguments?.product),
       ),
     );
   }
@@ -48,7 +59,7 @@ class AppBarIconBtn extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back_ios),
+            child: const Icon(Icons.arrow_back_ios),
           )),
     );
   }
