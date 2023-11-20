@@ -428,38 +428,38 @@ class ProductCard extends StatelessWidget {
   }
 }
 
-class PopularProduct extends StatelessWidget {
-  const PopularProduct({
-    super.key,
-  });
+// class PopularProduct extends StatelessWidget {
+//   const PopularProduct({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SectionTitle(text: 'Popular Product', press: () {}),
-        const SizedBox(height: 20),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ...List.generate(demoProducts.length, (index) {
-                if (demoProducts[index].isPopular) {
-                  return ProductCard(
-                    product: demoProducts[index],
-                    press: () => Navigator.pushNamed(
-                        context, DetailsScreen.routeName,
-                        arguments: ProductDetailsArguments(
-                            product: demoProducts[index])),
-                  );
-                }
-                return SizedBox.shrink();
-              }),
-              const SizedBox(width: 20),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         SectionTitle(text: 'Popular Product', press: () {}),
+//         const SizedBox(height: 20),
+//         SingleChildScrollView(
+//           scrollDirection: Axis.horizontal,
+//           child: Row(
+//             children: [
+//               ...List.generate(demoProducts.length, (index) {
+//                 if (demoProducts[index].isPopular) {
+//                   return ProductCard(
+//                     product: demoProducts[index],
+//                     press: () => Navigator.pushNamed(
+//                         context, DetailsScreen.routeName,
+//                         arguments: ProductDetailsArguments(
+//                             product: demoProducts[index])),
+//                   );
+//                 }
+//                 return SizedBox.shrink();
+//               }),
+//               const SizedBox(width: 20),
+//             ],
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
