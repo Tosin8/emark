@@ -1,7 +1,4 @@
-import 'package:emark/models/product.dart';
-import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'home_widgets.dart';
 
