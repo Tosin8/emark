@@ -25,7 +25,6 @@ class _BodyState extends State<Body> {
         SizedBox(height: 30),
         SpeicialOffers(),
         SizedBox(height: 20),
-        PopularProduct(),
         SizedBox(height: 20),
       ],
     )));
