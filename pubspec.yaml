@@ -64,6 +64,7 @@ flutter:
      - assets/images/splash/1.jpg
      - assets/images/splash/2.jpg
      - assets/images/splash/3.jpg
+     - assets/images/splash/4.jpg
      - assets/images/sub-image/apple-pay.png
      - assets/images/sub-image/fedex-express.png
      - assets/images/sub-image/glap.png
