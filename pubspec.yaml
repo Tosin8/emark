@@ -1,5 +1,5 @@
 name: emark
-description: An overall ecommerce mobile application. 
+description: An overall ecommerce mobile application.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -27,19 +27,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.7
   provider: ^6.0.5
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -47,10 +42,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -61,91 +57,83 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/splash/1.jpg
-     - assets/images/splash/2.jpg
-     - assets/images/splash/3.jpg
-     - assets/images/splash/4.jpg
-     - assets/images/sub-image/apple-pay.png
-     - assets/images/sub-image/fedex-express.png
-     - assets/images/sub-image/glap.png
-     - assets/images/sub-image/google-pay.png
-     - assets/images/sub-image/mastercard-2.png
-     - assets/images/sub-image/pattern-success.png
-     - assets/images/sub-image/paypal.png
-     - assets/images/sub-image/profile-pic.png
-     - assets/icons/arrow_right.svg
-     - assets/icons/back_icon.svg
-     - assets/icons/bell.svg
-     - assets/icons/bill_icon.svg
-     - assets/icons/call.svg
-     - assets/icons/camera_icon.svg
-     - assets/icons/cart_icon.svg
-     - assets/icons/cash.svg
-     - assets/icons/chat_bubble_icon.svg
-     - assets/icons/check_mark_rounded.svg
-     - assets/icons/close.svg
-     - assets/icons/conversation.svg
-     - assets/icons/discover.svg
-     - assets/icons/error.svg
-     - assets/icons/facebook-2.svg
-     - assets/icons/flash_icon.svg
-     - assets/icons/game_icon.svg
-     - assets/icons/gift_icon.svg
-     - assets/icons/google-icon.svg
-     - assets/icons/heart_icon.svg
-     - assets/icons/heart_Icon_2.svg
-     - assets/icons/location_point.svg
-     - assets/icons/lock.svg
-     - assets/icons/log_out.svg
-     - assets/icons/mail.svg
-     - assets/icons/parcel.svg
-     - assets/icons/phone.svg
-     - assets/icons/plus_icon.svg
-     - assets/icons/question_mark.svg
-     - assets/icons/receipt.svg
-     - assets/icons/remove.svg
-     - assets/icons/search_icon.svg
-     - assets/icons/settings.svg
-     - assets/icons/shop_icon.svg 
-     - assets/icons/star_icon.svg
-     - assets/icons/success.svg
-     - assets/icons/trash.svg
-     - assets/icons/twitter.svg
-     - assets/icons/user_icon.svg
-     - assets/icons/user.svg
-     - assets/icons/nigeria.png
-     - assets/images/products/glap.png
-     - assets/images/products/image_popular_product_3.png
-     - assets/images/products/image_banner_2.png
-     - assets/images/products/image_banner_3.png
-     - assets/images/products/image_popular_product_1.png
-     - assets/images/products/image_popular_product_2.png
-     - assets/images/products/image_popular_product_3.png
-     - assets/images/products/product_1_image.png
-     - assets/images/products/ps4_console_blue_1.png
-     - assets/images/products/ps4_console_blue_2.png
-     - assets/images/products/ps4_console_blue_3.png
-     - assets/images/products/ps4_console_blue_4.png
-     - assets/images/products/ps4_console_white_1.png
-     - assets/images/products/ps4_console_white_2.png
-     - assets/images/products/ps4_console_white_3.png
-     - assets/images/products/ps4_console_white_4.png
-     - assets/images/products/shoes2.png
-     - assets/images/products/tshirt.png
-     - assets/images/products/wireless_headset.png
-
-
-
-
-
-
+    - assets/images/splash/1.jpg
+    - assets/images/splash/2.jpg
+    - assets/images/splash/3.jpg
+    - assets/images/splash/4.jpg
+    - assets/images/sub-image/apple-pay.png
+    - assets/images/sub-image/fedex-express.png
+    - assets/images/sub-image/glap.png
+    - assets/images/sub-image/google-pay.png
+    - assets/images/sub-image/mastercard-2.png
+    - assets/images/sub-image/pattern-success.png
+    - assets/images/sub-image/paypal.png
+    - assets/images/sub-image/profile-pic.png
+    - assets/icons/arrow_right.svg
+    - assets/icons/back_icon.svg
+    - assets/icons/bell.svg
+    - assets/icons/bill_icon.svg
+    - assets/icons/call.svg
+    - assets/icons/camera_icon.svg
+    - assets/icons/cart_icon.svg
+    - assets/icons/cash.svg
+    - assets/icons/chat_bubble_icon.svg
+    - assets/icons/check_mark_rounded.svg
+    - assets/icons/close.svg
+    - assets/icons/conversation.svg
+    - assets/icons/discover.svg
+    - assets/icons/error.svg
+    - assets/icons/facebook-2.svg
+    - assets/icons/flash_icon.svg
+    - assets/icons/game_icon.svg
+    - assets/icons/gift_icon.svg
+    - assets/icons/google-icon.svg
+    - assets/icons/heart_icon.svg
+    - assets/icons/heart_Icon_2.svg
+    - assets/icons/location_point.svg
+    - assets/icons/lock.svg
+    - assets/icons/log_out.svg
+    - assets/icons/mail.svg
+    - assets/icons/parcel.svg
+    - assets/icons/phone.svg
+    - assets/icons/plus_icon.svg
+    - assets/icons/question_mark.svg
+    - assets/icons/receipt.svg
+    - assets/icons/remove.svg
+    - assets/icons/search_icon.svg
+    - assets/icons/settings.svg
+    - assets/icons/shop_icon.svg
+    - assets/icons/star_icon.svg
+    - assets/icons/success.svg
+    - assets/icons/trash.svg
+    - assets/icons/twitter.svg
+    - assets/icons/user_icon.svg
+    - assets/icons/user.svg
+    - assets/icons/nigeria.png
+    - assets/images/products/glap.png
+    - assets/images/products/image_popular_product_3.png
+    - assets/images/products/image_banner_2.png
+    - assets/images/products/image_banner_3.png
+    - assets/images/products/image_popular_product_1.png
+    - assets/images/products/image_popular_product_2.png
+    - assets/images/products/image_popular_product_3.png
+    - assets/images/products/product_1_image.png
+    - assets/images/products/ps4_console_blue_1.png
+    - assets/images/products/ps4_console_blue_2.png
+    - assets/images/products/ps4_console_blue_3.png
+    - assets/images/products/ps4_console_blue_4.png
+    - assets/images/products/ps4_console_white_1.png
+    - assets/images/products/ps4_console_white_2.png
+    - assets/images/products/ps4_console_white_3.png
+    - assets/images/products/ps4_console_white_4.png
+    - assets/images/products/shoes2.png
+    - assets/images/products/tshirt.png
+    - assets/images/products/wireless_headset.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -156,7 +144,7 @@ flutter:
       fonts:
         - asset: assets/fonts/muli/Muli.ttf
         - asset: assets/fonts/muli/Muli-Bold.ttf
-          weight: 700  
+          weight: 700
         - asset: assets/fonts/muli/Muli-BoldItalic.ttf
         - asset: assets/fonts/muli/Muli-ExtraLight.ttf
         - asset: assets/fonts/muli/Muli-ExtraLightItalic.ttf
@@ -168,7 +156,7 @@ flutter:
         - asset: assets/fonts/muli/Muli-Semi-BoldItalic.ttf
   #         style: italic
   #   - family: Trajan Pro
-   #    fonts:
+  #    fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700

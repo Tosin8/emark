@@ -16,15 +16,23 @@ class _SplashBodyState extends State<SplashBody> {
     return SafeArea(
       child: Stack(children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
-            image: const AssetImage(
+            image: AssetImage(
               'assets/images/splash/4.jpg',
             ),
-            colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8), BlendMode.modulate),
+            // colorFilter: ColorFilter.mode(
+            //     Colors.white.withOpacity(0.8), BlendMode.modulate),
             fit: BoxFit.cover,
           )),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 120),
+            child: Container(
+              height: 300,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
         ),
       ]),
     );
