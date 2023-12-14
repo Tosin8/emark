@@ -1,6 +1,6 @@
 Project : EMARK
 
-An overall e-commerce mobile application made with flutter. 
+An e-commerce mobile application contains of varieties made with Flutter. 
 
 Screenshots:
 ![5](https://github.com/Tosin8/emark/assets/23019300/6724911f-0b6d-43ed-bfe0-09154a11abf5)
