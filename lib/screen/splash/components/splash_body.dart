@@ -1,9 +1,6 @@
-import 'dart:ffi';
 
-import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
-import 'splash_widget.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
