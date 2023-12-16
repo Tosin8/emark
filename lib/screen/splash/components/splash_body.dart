@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 
 
 class SplashBody extends StatefulWidget {
@@ -10,6 +11,8 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
+
+  List<CarouselItem> itemList = []; 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
