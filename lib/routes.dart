@@ -1,6 +1,5 @@
 import 'package:emark/screen/form/forgot_pass/forgot_pass.dart';
 import 'package:emark/screen/form/login/login.dart';
-import 'package:emark/screen/product_details/details_screen.dart';
 import 'package:emark/screen/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
