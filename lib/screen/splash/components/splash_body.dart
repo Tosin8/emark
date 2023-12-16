@@ -12,22 +12,66 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
 
-  List<CarouselItem> itemList = []; 
+  List<CarouselItem> itemList = [
+    CarouselItem(
+      image: AssetImage('assets/images/splash/4.jpg'), 
+      boxDecoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.black.withOpacity(0.30),
+           Colors.blueAccent.withOpacity(1)], 
+        begin: FractionalOffset.bottomCenter,
+         end: FractionalOffset.topCenter),
+        
+      )
+    ), 
+    CarouselItem(
+      image: AssetImage('assets/images/splash/4.jpg'), 
+      boxDecoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.black.withOpacity(0.30),
+           Colors.blueAccent.withOpacity(1)], 
+        begin: FractionalOffset.bottomCenter,
+         end: FractionalOffset.topCenter),
+        
+      )
+    ),CarouselItem(
+      image: AssetImage('assets/images/splash/4.jpg'), 
+      boxDecoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.black.withOpacity(0.30),
+           Colors.blueAccent.withOpacity(1)], 
+        begin: FractionalOffset.bottomCenter,
+         end: FractionalOffset.topCenter),
+        
+      )
+    )
+  ]; 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(children: [
-        Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage(
-              'assets/images/splash/4.jpg',
-            ),
-            // colorFilter: ColorFilter.mode(
-            //     Colors.white.withOpacity(0.8), BlendMode.modulate),
-            fit: BoxFit.cover,
-          )),
-        ),
+       // Container(
+          // decoration: const BoxDecoration(
+          //     image: DecorationImage(
+          //   image: AssetImage(
+          //     'assets/images/splash/4.jpg',
+          //   ),
+          //   // colorFilter: ColorFilter.mode(
+          //   //     Colors.white.withOpacity(0.8), BlendMode.modulate),
+          //   fit: BoxFit.cover,
+          // )),
+       
+      
+       // ),
+       CustomCarouselSlider(
+        items: itemList, 
+        height: MediaQuery.of(context).size.height, 
+        width: MediaQuery.of(context).size.width,
+        autoplay: true, 
+        showSubBackground: false,
+        showText: false, 
+       animationCurve: Curves.linear,
+         ), 
         Padding(
           padding: const EdgeInsets.only(top: 400),
           child: Padding(
