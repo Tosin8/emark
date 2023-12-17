@@ -33,7 +33,7 @@ dependencies:
   flutter_custom_carousel_slider: ^1.2.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.7
-  provider: ^6.0.5
+
   shared_preferences: ^2.2.2
   shimmer: ^3.0.0
   smooth_page_indicator: ^1.1.0

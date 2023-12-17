@@ -1,7 +1,10 @@
 
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:emark/screen/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -186,6 +189,9 @@ class _SplashBodyState extends State<SplashBody> {
                         }, 
                        child: isLastPage ? GestureDetector(
                         onTap: () async {
+                          // navigate directly to home page after reload the app and not beign a new user. 
+                          final prefs = await SharedPreferences.getInstance(); 
+                          prefs.setBool('showHome', true);
                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home() ));
                         },
                          
