@@ -59,10 +59,14 @@ class _SplashBodyState extends State<SplashBody> {
                 child: Column(
                 
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8), 
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10), 
                       child: Row(
-                        children: [Text('Skip')],
+                        mainAxisAlignment: MainAxisAlignment.end, 
+                        children: [Padding(
+                          padding: EdgeInsets.only(right: 25.0),
+                          child: Text('Skip', style: TextStyle(fontSize: 16),),
+                        )],
                       ),
                     ), 
                     Expanded(
