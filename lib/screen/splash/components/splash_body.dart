@@ -78,7 +78,7 @@ class _SplashBodyState extends State<SplashBody> {
                         )],
                       ),
                     ), 
-                    SizedBox(height: 8), 
+                    const SizedBox(height: 8), 
                     Expanded(
                       child: PageView(
                         controller: controller,
@@ -156,8 +156,8 @@ class _SplashBodyState extends State<SplashBody> {
                         
                                ] ),
                     ),
-                    Center(child: SmoothPageIndicator(controller: controller, count: 3,effect: ScaleEffect(),),), 
-                    SizedBox(height: 10), 
+                    Center(child: SmoothPageIndicator(controller: controller, count: 3,effect: const ScaleEffect(dotColor: Colors.black26, activeDotColor: Colors.blueAccent, radius: 10,dotWidth: 8, dotHeight: 8),),), 
+                    const SizedBox(height: 10), 
                      Container(
                               height: 50,
                               width: 300,
