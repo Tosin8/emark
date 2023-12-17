@@ -1,4 +1,3 @@
-import 'package:emark/screen/product_details/details_screen.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
