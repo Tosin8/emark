@@ -35,6 +35,7 @@ dependencies:
   flutter_svg: ^2.0.7
   provider: ^6.0.5
   shimmer: ^3.0.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
