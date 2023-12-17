@@ -11,6 +11,12 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
+  final controller = PageController(); 
+  @override 
+  void dispose() {
+    controller.dispose(); 
+    super.dispose(); 
+  }
 
   List<CarouselItem> itemList = [
     CarouselItem(
@@ -59,19 +65,24 @@ class _SplashBodyState extends State<SplashBody> {
                 child: Column(
                 
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10), 
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10), 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end, 
                         children: [Padding(
-                          padding: EdgeInsets.only(right: 25.0),
-                          child: Text('Skip', style: TextStyle(fontSize: 16),),
+                          padding: const EdgeInsets.only(right: 25.0),
+                          child: GestureDetector(
+                            onTap: (){},
+                            child: const Text('Skip', style: TextStyle(fontSize: 16),)),
                         )],
                       ),
                     ), 
+                    SizedBox(height: 12), 
                     Expanded(
                       child: PageView(
+                        controller: controller,
                         children:[
+                        
                            Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -91,26 +102,15 @@ class _SplashBodyState extends State<SplashBody> {
                               textAlign: TextAlign.center,
                             ),
                             const SizedBox(height: 50),
-                            // Container(
-                            //   height: 50,
-                            //   width: 300,
-                            //   decoration: BoxDecoration(
-                            //       color: Colors.blueAccent,
-                            //       borderRadius: BorderRadius.circular(30)),
-                            //   child: const Align(
-                            //       child: Text(
-                            //     'Get Started',
-                            //     style: TextStyle(color: Colors.white),
-                            //   )),
-                            // ),
-                            const SizedBox(height: 20),
+                           
+                           
                           ],
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             const Text(
-                              'Find your best outfit\n and look good',
+                              'Choosing a signature \n fragrance is profoundly',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 23,
@@ -119,13 +119,43 @@ class _SplashBodyState extends State<SplashBody> {
                             ),
                             const SizedBox(height: 20),
                             Text(
-                              'Shop now and get value \nfor your quality products',
+                              'From timeless, iconic classics \n to modern niche favorites',
                               style: TextStyle(
                                   color: Colors.black.withOpacity(0.5), fontSize: 16),
                               textAlign: TextAlign.center,
                             ),
                             const SizedBox(height: 50),
-                            Container(
+                           
+                          
+                          ],
+                        ),
+                          Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const Text(
+                              'Transform your home \n into inspiring spaces',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w700),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              'Shop for all elements that\n shapes an interior landscape',
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.5), fontSize: 16),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 50),
+                           
+                          
+                          ],
+                        ),
+                        
+                               ] ),
+                    ),
+                     Container(
                               height: 50,
                               width: 300,
                               decoration: BoxDecoration(
@@ -137,12 +167,7 @@ class _SplashBodyState extends State<SplashBody> {
                                 style: TextStyle(color: Colors.white),
                               )),
                             ),
-                            const SizedBox(height: 20),
-                          ],
-                        ),
-                        
-                               ] ),
-                    ),
+                              const SizedBox(height: 20),
                   ],
                 )),
           ),
