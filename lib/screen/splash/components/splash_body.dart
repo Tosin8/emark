@@ -1,4 +1,5 @@
 
+import 'package:emark/screen/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -13,6 +14,7 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
   final controller = PageController(); 
+  bool isLastPage = false;
   @override 
   void dispose() {
     controller.dispose(); 
@@ -73,7 +75,9 @@ class _SplashBodyState extends State<SplashBody> {
                         children: [Padding(
                           padding: const EdgeInsets.only(right: 25.0),
                           child: GestureDetector(
-                            onTap: (){},
+                            onTap: (){
+                              controller.jumpToPage(2); 
+                            },
                             child: const Text('Skip', style: TextStyle(fontSize: 16),)),
                         )],
                       ),
@@ -82,6 +86,12 @@ class _SplashBodyState extends State<SplashBody> {
                     Expanded(
                       child: PageView(
                         controller: controller,
+                        onPageChanged: (index) {
+                          setState(() {
+                            isLastPage = index == 2; 
+                          });
+                          
+                        },
                         children:[
                         
                            Column(
@@ -156,20 +166,56 @@ class _SplashBodyState extends State<SplashBody> {
                         
                                ] ),
                     ),
-                    Center(child: SmoothPageIndicator(controller: controller, count: 3,effect: const ScaleEffect(dotColor: Colors.black26, activeDotColor: Colors.blueAccent, radius: 10,dotWidth: 8, dotHeight: 8),),), 
+                    Center(child: SmoothPageIndicator(controller: controller, count: 3,effect: const ScaleEffect(
+                      dotColor: Colors.black26, 
+                      activeDotColor: Colors.blueAccent, 
+                      radius: 10,
+                      dotWidth: 8, 
+                      dotHeight: 8),
+                      onDotClicked: (index) => controller.animateToPage(index,
+                       duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
+                      ),
+                      ), 
                     const SizedBox(height: 10), 
-                     Container(
-                              height: 50,
-                              width: 300,
-                              decoration: BoxDecoration(
-                                  color: Colors.blueAccent,
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: const Align(
-                                  child: Text(
-                                'Get Started',
-                                style: TextStyle(color: Colors.white),
-                              )),
-                            ),
+                     GestureDetector(
+                      onTap:(){
+                        controller.nextPage(
+                        duration: const Duration(milliseconds: 500), 
+                        curve: Curves.easeInOut);
+                        
+                        }, 
+                       child: isLastPage ? GestureDetector(
+                        onTap: () async {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home() ));
+                        },
+                         
+                         child: Container(
+                          height: 50, width: 300, decoration: BoxDecoration(
+                            color: Colors.blueAccent,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          
+                          child: const Align(child: Text('Get Started', style: TextStyle(color: Colors.white, fontSize: 18,fontWeight: FontWeight.bold ),)), 
+                          
+                          
+                         
+                           
+                         ),
+                       ): Container(
+                                height: 50,
+                                width: 300,
+                                decoration: BoxDecoration(
+                                    color: Colors.blueAccent,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: const Align(
+                                  
+                                    child: Text(
+                                     
+                                  'Next',
+                                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                                )),
+                              ),
+                     ),
                               const SizedBox(height: 20),
                   ],
                 )),
