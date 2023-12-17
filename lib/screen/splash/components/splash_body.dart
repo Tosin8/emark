@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class SplashBody extends StatefulWidget {
@@ -77,7 +78,7 @@ class _SplashBodyState extends State<SplashBody> {
                         )],
                       ),
                     ), 
-                    SizedBox(height: 12), 
+                    SizedBox(height: 8), 
                     Expanded(
                       child: PageView(
                         controller: controller,
@@ -101,7 +102,7 @@ class _SplashBodyState extends State<SplashBody> {
                                   color: Colors.black.withOpacity(0.5), fontSize: 16),
                               textAlign: TextAlign.center,
                             ),
-                            const SizedBox(height: 50),
+                            const SizedBox(height: 20),
                            
                            
                           ],
@@ -124,7 +125,7 @@ class _SplashBodyState extends State<SplashBody> {
                                   color: Colors.black.withOpacity(0.5), fontSize: 16),
                               textAlign: TextAlign.center,
                             ),
-                            const SizedBox(height: 50),
+                            const SizedBox(height: 20),
                            
                           
                           ],
@@ -147,7 +148,7 @@ class _SplashBodyState extends State<SplashBody> {
                                   color: Colors.black.withOpacity(0.5), fontSize: 16),
                               textAlign: TextAlign.center,
                             ),
-                            const SizedBox(height: 50),
+                            const SizedBox(height: 20),
                            
                           
                           ],
@@ -155,6 +156,8 @@ class _SplashBodyState extends State<SplashBody> {
                         
                                ] ),
                     ),
+                    Center(child: SmoothPageIndicator(controller: controller, count: 3,effect: ScaleEffect(),),), 
+                    SizedBox(height: 10), 
                      Container(
                               height: 50,
                               width: 300,
