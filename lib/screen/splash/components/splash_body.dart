@@ -1,6 +1,7 @@
 
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:animate_do/animate_do.dart';
 import 'package:emark/screen/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
@@ -17,9 +18,9 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
    final List<List<String>> carousel = [
-    ['assets/images/splash/4.jpg', 'Find your best outfit\n and look good', 'shop now and get value\n for your quality products'], 
-    ['assets/images/splash/6.jpg', 'Find your best outfit\n and look good','shop now and get value\n for your quality products'], 
-    ['assets/images/splash/7.jpg', 'Find your best outfit\n and look good','shop now and get value\n for your quality products'], 
+    ['assets/images/splash/4.jpg', 'Find your best outfit\n and look good', 'Shop now and get value\n for your quality products'], 
+    ['assets/images/splash/6.jpg', 'Choosing a signature\n fragrance is profoundly','From timeless, iconic classic \n to modern niche favorites'], 
+    ['assets/images/splash/7.jpg', 'Transform your home\n into inspiring spaces','Shop for all elements that\n shapes an interior landscape'], 
 
   ]; 
 
@@ -81,9 +82,59 @@ class _SplashBodyState extends State<SplashBody> {
               } else if (details.velocity.pixelsPerSecond.dx < 0 ){
                 _next(); 
               }
-            }),
-          )
-        ],
+            }, 
+            child: FadeInUp(
+              duration: Duration(milliseconds: 800), 
+              child: Container(
+                width: double.infinity, height: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      carousel[currentIndex][0]), 
+                      fit: BoxFit.cover, 
+                  )
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 400), 
+                  child: Padding(padding: const EdgeInsets.all(8.0), 
+                  child: Container(
+                    height: 300, width: 500,
+                    decoration: BoxDecoration(
+                      color: Colors.white, 
+                      borderRadius: BorderRadius.circular(30)
+                    ), 
+                    child: Column(
+                      children: [
+                        Padding(padding: const EdgeInsets.only(top: 10), 
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(padding: const EdgeInsets.only(right: 25.0), 
+                            child: GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Text('Skip', style: TextStyle(fontSize: 16),
+                              ),
+                            ),)],
+                        ),), 
+                        const SizedBox(height: 8), 
+                        Expanded(child: FadeInUp(duration: Duration(milliseconds: 1000),
+                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FadeInUp(duration: Duration(milliseconds: 1300), child: Text(carousel[currentIndex][1], 
+                          style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.w700), 
+                          textAlign: TextAlign.center,),)
+                        ],
+                       ), ))
+                      ],
+                    ),
+                  ),),)
+              ))),
+          ]));
+  }
+}
        
       //  CustomCarouselSlider(
       //   items: itemList, 
@@ -266,7 +317,7 @@ class _SplashBodyState extends State<SplashBody> {
       //     ),
       //   ),
       //]
-      ),
-    );
-  }
-}
+//       ),
+//     );
+//   }
+// }
