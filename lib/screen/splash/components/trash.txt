@@ -97,3 +97,9 @@ List<Widget> _buildIndicator() {
 }
 
 }
+
+
+animate_do
+
+shared_preferences
+smooth_page_indicator
