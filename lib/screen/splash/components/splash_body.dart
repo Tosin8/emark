@@ -27,25 +27,25 @@ class _SplashBodyState extends State<SplashBody> {
 
   int currentIndex = 0; 
 
-  void _next() {
-    setState(() {
-      if(currentIndex < carousel.length - 1) {
-        currentIndex++; 
-      } else {
-        currentIndex = currentIndex; 
-      }
-    });
-  }
+  // void _next() {
+  //   setState(() {
+  //     if(currentIndex < carousel.length - 1) {
+  //       currentIndex++; 
+  //     } else {
+  //       currentIndex = currentIndex; 
+  //     }
+  //   });
+  // }
 
-  void _previous() {
-    setState(() {
-      if(currentIndex > 0) {
-        currentIndex--; 
-      } else {
-        currentIndex = 0; 
-      }
-    });
-  }
+  // void _previous() {
+  //   setState(() {
+  //     if(currentIndex > 0) {
+  //       currentIndex--; 
+  //     } else {
+  //       currentIndex = 0; 
+  //     }
+  //   });
+  // }
   // final controller = PageController(); 
   // bool isLastPage = false;
   // @override 
@@ -76,82 +76,22 @@ class _SplashBodyState extends State<SplashBody> {
     return SafeArea(
       child: Stack(
         children: [
-          GestureDetector(
-            onHorizontalDragEnd: (DragEndDetails details) {
-              if (details.velocity.pixelsPerSecond.dx > 0) {
-                _previous(); 
-              } else if (details.velocity.pixelsPerSecond.dx < 0 ){
-                _next(); 
-              }
-            }, 
-            child: FadeInUp(
-              duration: const Duration(milliseconds: 800), 
-              child: Container(
-                width: double.infinity, height: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      carousel[currentIndex][0]), 
-                      fit: BoxFit.cover, 
-                  )
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 400), 
-                  child: Padding(padding: const EdgeInsets.all(8.0), 
-                  child: Container(
-                    height: 300, width: 500,
-                    decoration: BoxDecoration(
-                      color: Colors.white, 
-                      borderRadius: BorderRadius.circular(30)
-                    ), 
-                    child: Column(
-                      children: [
-                        Padding(padding: const EdgeInsets.only(top: 10), 
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(padding: const EdgeInsets.only(right: 25.0), 
-                            child: GestureDetector(
-                              onTap: () {
-                                
-                              },
-                              child: const Text('Skip', style: TextStyle(fontSize: 16),
-                              ),
-                            ),)],
-                        ),), 
-                        const SizedBox(height: 8), 
-                        Expanded(
-                          child: FadeInUp(
-                            duration:  Duration(milliseconds: 1000),
-                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                              carousel[currentIndex][1], 
-                          style: const TextStyle(
-                            color: Colors.black,
-                             fontSize: 23,
-                              fontWeight: FontWeight.w700), 
-                          textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            carousel[currentIndex][2], style: TextStyle(color: Colors.black.withOpacity(0.5), 
-                          fontSize: 16), 
-                          textAlign: TextAlign.center,), 
-                          const SizedBox(height: 20), 
-                           
-                        ],
-                       ),
-                        )), 
-                        // Center(
-                        //   child: _buildIndicator, 
-                        // )
 
-                      ],
-                    ),
-                  ),),)
-              ))),
+          PageView(
+            children:[ Container(
+              width: double.infinity, 
+              height: double.infinity, 
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                
+                carousel[currentIndex][0]), 
+              fit: BoxFit.cover),
+              ),
+            ),
+         ] ),
+
+          
           ]
           )
           );
@@ -159,28 +99,7 @@ class _SplashBodyState extends State<SplashBody> {
           
   }
 
-  Widget 
- _indicator 
-(bool isActive) {
-  return Expanded(child: Container(height: 4, decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: isActive ? Colors.grey[800] : Colors.white
-  ),
-  )
-  );
-}
-
-List<Widget> _buildIndicator() {
-  List<Widget> indicators = []; 
-  for (int i = 0 ; i < carousel.length; i++) {
-    if(currentIndex == i) {
-      indicators.add(_indicator(true)); 
-    } else {
-      indicators.add(_indicator(false)); 
-    }
-  }
-  return indicators; 
-}
-
-}
+  
 
        
       //  CustomCarouselSlider(
