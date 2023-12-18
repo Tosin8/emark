@@ -16,30 +16,33 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
-  final controller = PageController(); 
-  bool isLastPage = false;
-  @override 
-  void dispose() {
-    controller.dispose(); 
-    super.dispose(); 
-  }
+  final List<List><String>> carousel = [
 
-  List<CarouselItem> itemList = [
-    CarouselItem(
-      image: const AssetImage('assets/images/splash/4.jpg'), 
+  ]; 
+  // final controller = PageController(); 
+  // bool isLastPage = false;
+  // @override 
+  // void dispose() {
+  //   controller.dispose(); 
+  //   super.dispose(); 
+  // }
+
+  // List<CarouselItem> itemList = [
+  //   CarouselItem(
+  //     image: const AssetImage('assets/images/splash/4.jpg'), 
      
         
       
-    ), 
-    CarouselItem(
-      image: const AssetImage('assets/images/splash/6.jpg'), 
+  //   ), 
+  //   CarouselItem(
+  //     image: const AssetImage('assets/images/splash/6.jpg'), 
     
         
-      ), 
-    CarouselItem(
-      image: const AssetImage('assets/images/splash/7.jpg'), 
+  //     ), 
+  //   CarouselItem(
+  //     image: const AssetImage('assets/images/splash/7.jpg'), 
      
-    ), 
+  //   ), 
   ]; 
   @override
   Widget build(BuildContext context) {

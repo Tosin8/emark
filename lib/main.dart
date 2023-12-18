@@ -1,4 +1,3 @@
-import 'package:emark/routes.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +43,8 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-             home: showHome ? const Home() : const SplashScreen(),
+             home: //showHome ? const Home() : 
+             const SplashScreen(),
            // initialRoute: SplashScreen.routeName,
             // using routes so that there will be no need of remebering names.
            // routes: routes,
