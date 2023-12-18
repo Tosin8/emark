@@ -16,9 +16,33 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
-  final List<List><String>> carousel = [
+   final List<List<String>> carousel = [
+    ['assets/images/splash/4.jpg', 'Find your best outfit\n and look good', 'shop now and get value\n for your quality products'], 
+    ['assets/images/splash/6.jpg', 'Find your best outfit\n and look good','shop now and get value\n for your quality products'], 
+    ['assets/images/splash/7.jpg', 'Find your best outfit\n and look good','shop now and get value\n for your quality products'], 
 
   ]; 
+
+  int currentIndex = 0; 
+
+  void _next() {
+    setState(() {
+      if(currentIndex < carousel.length - 1) {
+        currentIndex++; 
+      } else {
+        currentIndex = currentIndex; 
+      }
+    });
+  }
+
+  void _previous() {
+    setState(() {
+      if(currentIndex > 0) {
+        currentIndex--; 
+      } else {
+        currentIndex = 0; 
+      }
+    });
   // final controller = PageController(); 
   // bool isLastPage = false;
   // @override 
@@ -43,7 +67,7 @@ class _SplashBodyState extends State<SplashBody> {
   //     image: const AssetImage('assets/images/splash/7.jpg'), 
      
   //   ), 
-  ]; 
+  //]; 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
