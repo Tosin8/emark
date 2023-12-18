@@ -24,6 +24,7 @@ class _SplashBodyState extends State<SplashBody> {
 
   ]; 
 
+
   int currentIndex = 0; 
 
   void _next() {
@@ -84,7 +85,7 @@ class _SplashBodyState extends State<SplashBody> {
               }
             }, 
             child: FadeInUp(
-              duration: Duration(milliseconds: 800), 
+              duration: const Duration(milliseconds: 800), 
               child: Container(
                 width: double.infinity, height: double.infinity,
                 decoration: BoxDecoration(
@@ -114,27 +115,73 @@ class _SplashBodyState extends State<SplashBody> {
                               onTap: () {
                                 
                               },
-                              child: Text('Skip', style: TextStyle(fontSize: 16),
+                              child: const Text('Skip', style: TextStyle(fontSize: 16),
                               ),
                             ),)],
                         ),), 
                         const SizedBox(height: 8), 
-                        Expanded(child: FadeInUp(duration: Duration(milliseconds: 1000),
+                        Expanded(
+                          child: FadeInUp(
+                            duration:  Duration(milliseconds: 1000),
                        child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          FadeInUp(duration: Duration(milliseconds: 1300), child: Text(carousel[currentIndex][1], 
-                          style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.w700), 
-                          textAlign: TextAlign.center,),)
+                          Text(
+                              carousel[currentIndex][1], 
+                          style: const TextStyle(
+                            color: Colors.black,
+                             fontSize: 23,
+                              fontWeight: FontWeight.w700), 
+                          textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          Text(
+                            carousel[currentIndex][2], style: TextStyle(color: Colors.black.withOpacity(0.5), 
+                          fontSize: 16), 
+                          textAlign: TextAlign.center,), 
+                          const SizedBox(height: 20), 
+                           
                         ],
-                       ), ))
+                       ),
+                        )), 
+                        // Center(
+                        //   child: _buildIndicator, 
+                        // )
+
                       ],
                     ),
                   ),),)
               ))),
-          ]));
+          ]
+          )
+          );
+
+          
   }
+
+  Widget 
+ _indicator 
+(bool isActive) {
+  return Expanded(child: Container(height: 4, decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: isActive ? Colors.grey[800] : Colors.white
+  ),
+  )
+  );
 }
+
+List<Widget> _buildIndicator() {
+  List<Widget> indicators = []; 
+  for (int i = 0 ; i < carousel.length; i++) {
+    if(currentIndex == i) {
+      indicators.add(_indicator(true)); 
+    } else {
+      indicators.add(_indicator(false)); 
+    }
+  }
+  return indicators; 
+}
+
+}
+
        
       //  CustomCarouselSlider(
       //   items: itemList, 
