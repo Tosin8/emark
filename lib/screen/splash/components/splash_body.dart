@@ -26,9 +26,63 @@ class _SplashBodyState extends State<SplashBody> {
 @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Stack(
-        children: [
-
-        ])); 
+      child: Container(
+        child: PageView(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/splash/4.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Find your best outfit\n and look good', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
+                  SizedBox(height: 8), 
+                  Text('Shop now and get value\n for your quality products', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
+                  SizedBox(height: 80), 
+                ],
+              ),
+            ), 
+             Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/splash/6.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+                 child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Choosing a signature\n fragrance is profoundly', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
+                  SizedBox(height: 8), 
+                  Text('From timeless, iconic classic \n to modern niche favorites', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
+                  SizedBox(height: 80), 
+                ],
+              ),
+            ),
+             Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/splash/7.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+               child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Transform your home\n into inspiring spaces', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
+                  SizedBox(height: 8), 
+                  Text('Shop for all elements that\n shapes an interior landscape', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
+                  SizedBox(height: 80), 
+                ],
+              ),
+            ),  
+          ],
+        )
+     ) , 
+     ); 
   }
 }
