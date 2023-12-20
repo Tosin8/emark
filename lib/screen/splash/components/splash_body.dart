@@ -70,8 +70,7 @@ void dispose() {
                   ),
                 ),
               ), 
-               FadeIn(
-                 child: Container(
+               Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/splash/6.jpg'),
@@ -90,9 +89,8 @@ void dispose() {
                                        ),
                      ),
                                ),
-               ),
-               FadeIn(
-                 child: Container(
+               
+                Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/splash/7.jpg'),
@@ -111,7 +109,7 @@ void dispose() {
                                      ),
                    ),
                                ),
-               ),  
+                
             ],
           )
              ),

@@ -93,7 +93,7 @@ class DiscountBanner extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 20),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         width: double.infinity,
-        height: 90,
+        height:150,
         decoration: BoxDecoration(
           color: const Color(0xff4a3298),
           borderRadius: BorderRadius.circular(20),
@@ -310,12 +310,14 @@ class SpecialOfferCard extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20),
       child: SizedBox(
           width: 242,
-          height: 100,
+          height: 150,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(children: [
               Image.asset(image, fit: BoxFit.cover),
               Container(
+                height: 150,
+                width: 242,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
@@ -335,7 +337,7 @@ class SpecialOfferCard extends StatelessWidget {
                         TextSpan(
                             text: '$category\n',
                             style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: 23,
                               fontWeight: FontWeight.bold,
                             )),
                         TextSpan(text: '$numOfBrands Brands'),
