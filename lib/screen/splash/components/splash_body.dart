@@ -3,6 +3,7 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class SplashBody extends StatefulWidget {
@@ -93,15 +94,25 @@ void dispose() {
           )
              ),
              
-               Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    TextButton(onPressed: (){}, 
-                    child: const Text('Skip', style: TextStyle(color: Colors.white, fontSize: 18),)),
- TextButton(onPressed: (){}, 
-                    child: const Text('Next', style: TextStyle(color: Colors.white, fontSize: 18),)),
-                  ],)),
+               Positioned(
+                bottom: 200,left: 100,
+                
+                 child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                      TextButton(onPressed: (){
+                        controller.jumpToPage(2); 
+                      }, 
+                      child: const Text('Skip', style: TextStyle(color: Colors.white, fontSize: 18),)),
+                      Center(child: SmoothPageIndicator(controller: controller, count: 3,
+                      effect: const WormEffect(dotColor: Colors.white, dotHeight: 15, dotWidth: 8),),), 
+                  TextButton(onPressed: (){
+                    controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+                  }, 
+                      child: const Text('Next', style: TextStyle(color: Colors.white, fontSize: 18),)),
+                    ],)),
+               ),
                  
             ] ),
              
