@@ -3,8 +3,11 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:shimmer/main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../home/home.dart';
 
 
 class SplashBody extends StatefulWidget {
@@ -59,9 +62,9 @@ void dispose() {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text('Find your best outfit\n and look good', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
-                        SizedBox(height: 8), 
+                        SizedBox(height: 18), 
                         Text('Shop now and get value\n for your quality products', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
-                        SizedBox(height: 80), 
+                        SizedBox(height: 120), 
                       ],
                     ),
                   ),
@@ -80,9 +83,9 @@ void dispose() {
                                          mainAxisAlignment: MainAxisAlignment.end,
                                          children: [
                         Text('Choosing a signature\n fragrance is profoundly', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
-                        SizedBox(height: 8), 
+                        SizedBox(height: 18), 
                         Text('From timeless, iconic classic \n to modern niche favorites', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
-                        SizedBox(height: 80), 
+                        SizedBox(height: 120), 
                                          ],
                                        ),
                      ),
@@ -101,9 +104,9 @@ void dispose() {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text('Transform your home\n into inspiring spaces', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w700),textAlign: TextAlign.center,), 
-                        SizedBox(height: 8), 
+                        SizedBox(height: 18), 
                         Text('Shop for all elements that\n shapes an interior landscape', style: TextStyle(color: Colors.white, fontSize: 18),textAlign: TextAlign.center,), 
-                        SizedBox(height: 80), 
+                        SizedBox(height: 120), 
                       ],
                                      ),
                    ),
@@ -118,7 +121,7 @@ void dispose() {
                 
                  child: isLastPage ? TextButton (
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, shape: RoundedRectangleBorder( 
+                    foregroundColor: Colors.white, shape: const RoundedRectangleBorder( 
                   ), backgroundColor: Colors.teal.shade700, minimumSize: const Size.fromHeight(60), 
                   ),
                   
@@ -126,7 +129,8 @@ void dispose() {
                   style: TextStyle(fontSize: 20),
                   ),
                   onPressed:()async {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage())); 
+                    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: Home()));
+                    // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Home())); 
                   }, ):
                   Container(
                     child: Row(
