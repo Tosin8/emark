@@ -73,16 +73,21 @@ class searchField extends StatelessWidget {
           onChanged: (value) {
             // search value.
           },
-          decoration: const InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
+          decoration:  InputDecoration(
+            filled: true, 
+            fillColor: Color(0xff979797).withOpacity(0.1),
+            enabledBorder: searchOutlineInputBorder, 
+            focusedBorder: searchOutlineInputBorder, 
             hintText: 'Search Products',
             prefixIcon: Icon(Icons.search),
-            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           )),
     );
   }
 }
+
+const searchOutlineInputBorder = OutlineInputBorder (borderRadius: BorderRadius.all(Radius.circular(12)), borderSide: BorderSide.none, 
+);
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
