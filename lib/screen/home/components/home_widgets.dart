@@ -68,17 +68,19 @@ class searchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-        onChanged: (value) {
-          // search value.
-        },
-        decoration: const InputDecoration(
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          hintText: 'Search Products',
-          prefixIcon: Icon(Icons.search),
-          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        ));
+    return Form(
+      child: TextFormField(
+          onChanged: (value) {
+            // search value.
+          },
+          decoration: const InputDecoration(
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            hintText: 'Search Products',
+            prefixIcon: Icon(Icons.search),
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          )),
+    );
   }
 }
 
