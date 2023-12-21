@@ -27,7 +27,7 @@ class IconBtwCounter extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: kSecondaryColor.withOpacity(0.7),
+            color: Color(0xff979797).withOpacity(0.1),
             shape: BoxShape.circle,
           ),
           child: SvgPicture.asset(svgSrc),
@@ -75,12 +75,12 @@ class searchField extends StatelessWidget {
           },
           decoration:  InputDecoration(
             filled: true, 
-            fillColor: Color(0xff979797).withOpacity(0.1),
+            fillColor: const Color(0xff979797).withOpacity(0.1),
             enabledBorder: searchOutlineInputBorder, 
             focusedBorder: searchOutlineInputBorder, 
             hintText: 'Search Products',
-            prefixIcon: Icon(Icons.search),
-            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            prefixIcon: const Icon(Icons.search),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           )),
     );
   }
@@ -140,7 +140,7 @@ class HomeHeader extends StatelessWidget {
             width: 250,
             height: 50,
             decoration: BoxDecoration(
-              color: kSecondaryColor.withOpacity(0.7),
+              color: Color(0xff979797).withOpacity(0.1),
               borderRadius: BorderRadius.circular(15),
             ),
             child: const searchField(),
@@ -328,20 +328,17 @@ class SpecialOfferCard extends StatelessWidget {
           height: 150,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Stack(children: [
-              Image.asset(image, fit: BoxFit.cover),
-              Container(
-                height: 150,
-                width: 242,
-                decoration: BoxDecoration(
+            child: Stack(
+              children: [
+              Container(decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                       const Color(0xff343434).withOpacity(0.4),
                       const Color(0xff343434).withOpacity(0.15),
-                    ])),
-              ),
+                    ])),child: Image.asset(image, fit: BoxFit.contain),
+              ), 
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
