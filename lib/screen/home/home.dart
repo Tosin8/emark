@@ -11,6 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Body(),
+    bottomNavigationBar: BottomNavigationBar(items: items),
     );
   }
 }

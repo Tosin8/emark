@@ -12,7 +12,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return  const SafeArea(
         child: SingleChildScrollView(
             child: Column(
       children: [
@@ -27,6 +27,10 @@ class _BodyState extends State<Body> {
         SizedBox(height: 20),
         SizedBox(height: 20),
       ],
-    )));
+    ),
+    ),
+    
+    
+    );
   }
 }
