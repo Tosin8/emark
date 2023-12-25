@@ -1,6 +1,10 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:emark/screen/account/account_home.dart';
 import 'package:flutter/material.dart';
 
+import '../screen/cart/cart_home.dart';
+import '../screen/favorite/favs_home.dart';
+import '../screen/home/home.dart';
 import 'constants.dart';
 
 class NavBar extends StatefulWidget {
@@ -50,6 +54,24 @@ bottomNavigationBar: BottomNavyBar(
            textAlign: TextAlign.center), 
         ],
        ),
+   
+   
+   
     );
+  }
+  
+  appScreen() {
+    switch (index) {
+      case 0:
+      
+        return Cart();
+      case 1:
+        return Favs();
+      case 2:
+        return Account();
+    
+      default:
+        return Home();
+    }
   }
 }
