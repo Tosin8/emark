@@ -2,6 +2,9 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../models/product.dart';
+import '../../../widgets/product_card.dart';
+
 
 class IconBtwCounter extends StatelessWidget {
   const IconBtwCounter({
