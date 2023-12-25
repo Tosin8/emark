@@ -1,7 +1,6 @@
-import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
+import 'profile_menu.dart';
 import 'profile_pic.dart';
 
 class AccountBody extends StatelessWidget {
@@ -9,30 +8,35 @@ class AccountBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column( 
-      children: [
-        const ProfilePic(), 
-        const SizedBox(height: 20),
-        Padding(padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), 
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(20),
-            foregroundColor: const Color(0xfff5f6f9),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            
-              
-            ),
-          ),
-          onPressed: (){},
-         child: Row(
-          children: [
-            SvgPicture.asset('assets/icons/user_icon.svg', 
-            // ignore: deprecated_member_use
-            width: 22, color: kPrimaryColor)
-          ],
-         )),)
-        ] );
+    return SingleChildScrollView(
+      child: Column( 
+        children: [
+          const ProfilePic(), 
+          const SizedBox(height: 20),
+          ProfileMenu(
+            text: 'My Account', 
+            icon: 'assets/icons/user_icon.svg', 
+            press: () {  },
+          ), 
+           ProfileMenu(
+            text: 'Notifications',  
+            icon: 'assets/icons/bell.svg', 
+            press: () {  },
+          ) , ProfileMenu(
+            text: 'Settings', 
+            icon: 'assets/icons/settings.svg', 
+            press: () {  },
+          ),  ProfileMenu(
+            text: 'Help Center',  
+            icon: 'assets/icons/question_mark.svg', 
+            press: () {  },
+          ),  ProfileMenu(
+            text: 'Log Out',  
+            icon: 'assets/icons/log_out.svg', 
+            press: () {  },
+          ) , 
+          ] ),
+    );
   }
 }
 
