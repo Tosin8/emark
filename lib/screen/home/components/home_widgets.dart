@@ -2,7 +2,6 @@ import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../models/product.dart';
 
 class IconBtwCounter extends StatelessWidget {
   const IconBtwCounter({
@@ -368,64 +367,3 @@ class SpecialOfferCard extends StatelessWidget {
   }
 }
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
-    super.key, 
-    this.width = 140, 
-    this.aspectRatio = 1.02,
-     required this.product,
-  });
-
-final double width, aspectRatio; 
-final Product product; 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: SizedBox(
-        width: width, 
-        child: Column(
-          children: [
-            AspectRatio(aspectRatio: aspectRatio, 
-            child: Container(
-              padding: const EdgeInsets.all(20), 
-              decoration: BoxDecoration(
-                color: kSecondaryColor.withOpacity(0.2), 
-                borderRadius: BorderRadius.circular(15), 
-      
-              ),
-              child: Image.asset(demoProducts[0].images[0]),
-      
-            ),),
-            const SizedBox(height: 5),  
-            Text(
-              demoProducts[0].title,
-               style: const TextStyle(color: Colors.black),
-               maxLines: 2,
-            ), 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('\$${demoProducts[0].price}', 
-                style: const TextStyle(
-                  color: kPrimaryColor, 
-                  fontWeight: FontWeight.w600,
-                   fontSize: 18, 
-                )),
-                Container(
-                  padding: const EdgeInsets.all(4), 
-                  width: 28, height: 28, decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.4), 
-                    shape: BoxShape.circle, 
-                  ),
-                  child: SvgPicture.asset('assets/icons/heart_Icon_2.svg'),
-                )
-              ],
-            )
-      
-          ],
-        )
-      ),
-    );
-  }
-}

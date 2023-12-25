@@ -4,6 +4,7 @@ import 'package:emark/widgets/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../widgets/product_card.dart';
 import 'home_widgets.dart';
 
 class Body extends StatefulWidget {
@@ -29,16 +30,27 @@ class _BodyState extends State<Body> {
         const SizedBox(height: 30),
         const SpeicialOffers(),
         const SizedBox(height: 20),
-        SectionTitle(
+       
+    Column(
+      children: [
+         SectionTitle(
           text: 'Popular Products',
          press: (){}), 
-    SingleChildScrollView(
-      child: Row(
-        children: [
-          ...List.generate(demoProducts.length,
-           (index) => ProductCard(product: demoProducts[index]))
-        ],
-      ),
+         SizedBox(height: 20), 
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ...List.generate(demoProducts.length,
+               (index) => ProductCard(
+                product: demoProducts[index], 
+                ), 
+                ),
+                const SizedBox(width: 20), 
+            ],
+          ),
+        ),
+      ],
     )
      
       ],
