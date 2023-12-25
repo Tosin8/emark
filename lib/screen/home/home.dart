@@ -17,10 +17,23 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(),
+      body: const Body(),
       bottomNavigationBar: BottomNavyBar(
          onItemSelected: (index) => setState(()=> this.index = index), 
-        items: <BottomNavyBarItem>[],
+        items: <BottomNavyBarItem>[
+
+          BottomNavyBarItem(
+            icon: const Icon(Icons.apps),
+           title: const Text('Home')),   
+            BottomNavyBarItem(
+              icon: const Icon(Icons.shopping_cart),
+           title: const Text('Cart')), 
+              BottomNavyBarItem(
+                icon: const Icon(Icons.favorite),
+           title: const Text('Saved')),  
+             BottomNavyBarItem(icon: const Icon(Icons.person),
+           title: const Text('Account')), 
+        ],
        ),
   );
   
