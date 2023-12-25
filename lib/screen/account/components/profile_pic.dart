@@ -31,7 +31,7 @@ class ProfilePic extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
             ),
-             child: SvgPicture.asset('assets/icons/camera_icon.svg'), 
+             child: SvgPicture.asset('assets/icons/camera_icon.svg', color: Colors.black,), 
             
           ), 
           )
