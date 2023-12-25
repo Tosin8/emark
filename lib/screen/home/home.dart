@@ -20,39 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const Body(),
-      bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Colors.black,
-        containerHeight: 70,
-        selectedIndex: index,
-         onItemSelected: (index) => setState(()=> this.index = index), 
-        items: <BottomNavyBarItem>[
-
-          BottomNavyBarItem(
-            icon: const Icon(Icons.apps),
-           title: const Text('Home'), 
-           activeColor: kPrimaryColor,
-           inactiveColor: inactiveColor,
-           textAlign: TextAlign.center),   
-            BottomNavyBarItem(
-              icon: const Icon(Icons.shopping_cart),
-           title: const Text('Cart'), 
-           activeColor: kPrimaryColor,
-           inactiveColor: inactiveColor,
-           textAlign: TextAlign.center), 
-              BottomNavyBarItem(
-                icon: const Icon(Icons.favorite),
-           title: const Text('Saved'), 
-           activeColor: kPrimaryColor,
-           inactiveColor: inactiveColor,
-           textAlign: TextAlign.center),  
-             BottomNavyBarItem(
-              icon: const Icon(Icons.person),
-           title: const Text('Account'), 
-           activeColor: kPrimaryColor,
-           inactiveColor: inactiveColor,
-           textAlign: TextAlign.center), 
-        ],
-       ),
+      
   );
   
   }

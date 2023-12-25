@@ -16,6 +16,7 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
+      body: appScreen(), 
 bottomNavigationBar: BottomNavyBar(
         backgroundColor: Colors.black,
         containerHeight: 70,
