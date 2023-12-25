@@ -5,16 +5,17 @@ class AccountBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column( 
+    return const Column( 
       children: [
         SizedBox(
           width: 115 ,
            height: 115,
            child: Stack(
             fit:  StackFit.expand, 
+         
              children: [
              CircleAvatar(
-              backgroundImage: AssetImage('assets/images/sub-image/profile-pic.png'),
+              backgroundImage: AssetImage('assets/images/sub-image/user_profile.jpg'),
              )
             
              ],
