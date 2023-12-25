@@ -196,7 +196,7 @@ class _CategoriesState extends State<Categories> {
       ),
     );
 
-    //CategoryCard(categories: categories);
+    
   }
 }
 
