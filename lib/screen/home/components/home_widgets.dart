@@ -27,7 +27,7 @@ class IconBtwCounter extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: Color(0xff979797).withOpacity(0.1),
+            color: const Color(0xff979797).withOpacity(0.1),
             shape: BoxShape.circle,
           ),
           child: SvgPicture.asset(svgSrc),
@@ -140,7 +140,7 @@ class HomeHeader extends StatelessWidget {
             width: 250,
             height: 50,
             decoration: BoxDecoration(
-              color: Color(0xff979797).withOpacity(0.1),
+              color: const Color(0xff979797).withOpacity(0.1),
               borderRadius: BorderRadius.circular(15),
             ),
             child: const searchField(),
@@ -368,117 +368,64 @@ class SpecialOfferCard extends StatelessWidget {
   }
 }
 
-// class ProductCard extends StatelessWidget {
-//   const ProductCard({
-//     super.key,
-//     this.width = 140,
-//     this.aspectRetion = 1.02,
-//     required this.product,
-//     required this.press,
-//   });
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    super.key, 
+    this.width = 140, 
+    this.aspectRatio = 1.02,
+     required this.product,
+  });
 
-//   final double width, aspectRetion;
-//   final Product product;
-//   final GestureTapCallback press;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.only(left: 20),
-//       child: GestureDetector(
-//         onTap: press,
-//         child: SizedBox(
-//           width: width,
-//           child: Column(
-//             children: [
-//               AspectRatio(
-//                 aspectRatio: aspectRetion,
-//                 child: Container(
-//                   padding: const EdgeInsets.all(20),
-//                   decoration: BoxDecoration(
-//                     color: kSecondaryColor.withOpacity(0.3),
-//                     borderRadius: BorderRadius.circular(15),
-//                   ),
-//                   child: Image.asset(product.images[0]),
-//                 ),
-//               ),
-//               const SizedBox(height: 5),
-//               Text(
-//                 product.title,
-//                 style: const TextStyle(color: Colors.black),
-//                 maxLines: 2,
-//               ),
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   Text(
-//                     '\$${product.price}',
-//                     style: const TextStyle(
-//                         fontSize: 18,
-//                         fontWeight: FontWeight.w600,
-//                         color: kPrimaryColor),
-//                   ),
-//                   InkWell(
-//                     onTap: () {},
-//                     borderRadius: BorderRadius.circular(30),
-//                     child: Container(
-//                       padding: const EdgeInsets.all(6),
-//                       width: 28,
-//                       height: 28,
-//                       decoration: BoxDecoration(
-//                           color: product.isFavorite
-//                               ? kPrimaryColor.withOpacity(0.5)
-//                               : kSecondaryColor.withOpacity(0.51),
-//                           shape: BoxShape.circle),
-//                       child: SvgPicture.asset(
-//                         'assets/icons/heart_Icon_2.svg',
-//                         color: product.isFavorite
-//                             ? const Color(0xffff4848)
-//                             : const Color(0xffd8dee4),
-//                       ),
-//                     ),
-//                   )
-//                 ],
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class PopularProduct extends StatelessWidget {
-//   const PopularProduct({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         SectionTitle(text: 'Popular Product', press: () {}),
-//         const SizedBox(height: 20),
-//         SingleChildScrollView(
-//           scrollDirection: Axis.horizontal,
-//           child: Row(
-//             children: [
-//               ...List.generate(demoProducts.length, (index) {
-//                 if (demoProducts[index].isPopular) {
-//                   return ProductCard(
-//                     product: demoProducts[index],
-//                     press: () => Navigator.pushNamed(
-//                         context, DetailsScreen.routeName,
-//                         arguments: ProductDetailsArguments(
-//                             product: demoProducts[index])),
-//                   );
-//                 }
-//                 return SizedBox.shrink();
-//               }),
-//               const SizedBox(width: 20),
-//             ],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
+final double width, aspectRatio; 
+final Product product; 
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: SizedBox(
+        width: width, 
+        child: Column(
+          children: [
+            AspectRatio(aspectRatio: aspectRatio, 
+            child: Container(
+              padding: const EdgeInsets.all(20), 
+              decoration: BoxDecoration(
+                color: kSecondaryColor.withOpacity(0.2), 
+                borderRadius: BorderRadius.circular(15), 
+      
+              ),
+              child: Image.asset(demoProducts[0].images[0]),
+      
+            ),),
+            const SizedBox(height: 5),  
+            Text(
+              demoProducts[0].title,
+               style: const TextStyle(color: Colors.black),
+               maxLines: 2,
+            ), 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('\$${demoProducts[0].price}', 
+                style: const TextStyle(
+                  color: kPrimaryColor, 
+                  fontWeight: FontWeight.w600,
+                   fontSize: 18, 
+                )),
+                Container(
+                  padding: const EdgeInsets.all(4), 
+                  width: 28, height: 28, decoration: BoxDecoration(
+                    color: kSecondaryColor.withOpacity(0.4), 
+                    shape: BoxShape.circle, 
+                  ),
+                  child: SvgPicture.asset('assets/icons/heart_Icon_2.svg'),
+                )
+              ],
+            )
+      
+          ],
+        )
+      ),
+    );
+  }
+}
