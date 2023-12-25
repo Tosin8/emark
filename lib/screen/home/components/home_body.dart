@@ -25,7 +25,7 @@ class _BodyState extends State<Body> {
         SizedBox(height: 30),
         SpeicialOffers(),
         SizedBox(height: 20),
-        SizedBox(height: 20),
+     
       ],
     ),
     ),

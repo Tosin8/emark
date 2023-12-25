@@ -330,15 +330,21 @@ class SpecialOfferCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               children: [
-              Container(decoration: BoxDecoration(
+                  Image.asset(image, 
+                    fit: BoxFit.contain), 
+              Container(
+                height: 150, 
+                width: 242,
+                decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
                       const Color(0xff343434).withOpacity(0.4),
                       const Color(0xff343434).withOpacity(0.15),
-                    ])),child: Image.asset(image, fit: BoxFit.contain),
-              ), 
+                    ])),
+                   ),
+            
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -357,8 +363,8 @@ class SpecialOfferCard extends StatelessWidget {
                 ),
               ),
             ]),
-          )),
-    );
+          )));
+    
   }
 }
 
