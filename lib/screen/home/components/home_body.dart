@@ -1,7 +1,5 @@
-import 'package:emark/models/product.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widgets/product_card.dart';
 import 'home_widgets.dart';
 
 class Body extends StatefulWidget {
