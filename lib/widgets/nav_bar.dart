@@ -16,13 +16,14 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int index = 0; 
-  final inactiveColor = Color(0xffffecdf); 
+  final inactiveColor = const Color(0xffffecdf); 
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
       body: appScreen(), 
 bottomNavigationBar: BottomNavyBar(
         backgroundColor: Colors.black,
+        itemCornerRadius: 16,
         containerHeight: 70,
         selectedIndex: index,
          onItemSelected: (index) => setState(()=> this.index = index), 
@@ -62,16 +63,19 @@ bottomNavigationBar: BottomNavyBar(
   
   appScreen() {
     switch (index) {
-      case 0:
-      
-        return Cart();
+     
+     
       case 1:
-        return Favs();
+      
+      
+        return const Cart();
       case 2:
-        return Account();
+        return const Favs();
+      case 3:
+        return const Account();
     
       default:
-        return Home();
+        return const Home();
     }
   }
 }

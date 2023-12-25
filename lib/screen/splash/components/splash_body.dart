@@ -2,6 +2,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:animate_do/animate_do.dart';
+import 'package:emark/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shimmer/main.dart';
@@ -127,7 +128,7 @@ void dispose() {
                   style: TextStyle(fontSize: 20),
                   ),
                   onPressed:()async {
-                    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: Home()));
+                    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: NavBar()));
                     // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Home())); 
                   }, ):
                   Container(
