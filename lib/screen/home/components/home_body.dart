@@ -12,28 +12,47 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return  const SafeArea(
         child: SingleChildScrollView(
             child: Column(
       children:  [
-        const SizedBox(height: 20),
-        const HomeHeader(),
-        const SizedBox(height: 20),
-        const DiscountBanner(),
-        const SizedBox(height: 20),
-        const Categories(),
-        const SizedBox(height: 30),
-        const SpeicialOffers(),
-        const SizedBox(height: 20),
+        SizedBox(height: 20),
+        HomeHeader(),
+        SizedBox(height: 20),
+        DiscountBanner(),
+        SizedBox(height: 20),
+        Categories(),
+        SizedBox(height: 30),
+        SpeicialOffers(),
+        SizedBox(height: 20),
        
-    const PopularProducts(), 
-    const SizedBox(height: 20), 
-    const Padding(
+    PopularProducts(), 
+    SizedBox(height: 20), 
+    Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Text('Our Collections', style: TextStyle(fontSize: 18),),
     ), 
     //const SizedBox(height: 2), 
-    AspectRatio(
+    CollectionCard(),
+    
+     
+      ],
+    ),
+    ),
+    
+    
+    );
+  }
+}
+
+class CollectionCard extends StatelessWidget {
+  const CollectionCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
       aspectRatio: 1,
       child: GridView.count(
           crossAxisCount: 3, 
@@ -47,8 +66,8 @@ class _BodyState extends State<Body> {
               text: 'Supermarket Deals', 
               press: () {  },
                ),
-
-Collections(
+    
+    Collections(
               image: 'assets/images/electronic.jpg',
               text: 'Electronic \nDeals', 
               press: () {  },
@@ -86,48 +105,6 @@ Collections(
              
            
           ],),
-    ),
-    
-     
-      ],
-    ),
-    ),
-    
-    
-    );
-  }
-}
-
-class Collections extends StatelessWidget {
-  const Collections({
-    super.key, required this.image, required this.text, required this.press,
-  });
-
-final String image, text; 
-final VoidCallback press; 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press, 
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(6),
-        child: Container(
-          
-          decoration:  BoxDecoration(
-            image: DecorationImage(
-              image:  AssetImage(image), fit: BoxFit.cover
-              ), 
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.black.withOpacity(0.4), Colors.black38.withOpacity(0.6),], 
-              begin: Alignment.bottomCenter)
-            ),
-            child: Align(child: Text(text, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),textAlign: TextAlign.center,)),
-          ),
-        ),
-      ),
     );
   }
 }
