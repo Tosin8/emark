@@ -155,14 +155,14 @@ flutter:
     - assets/images/kids.jpg
     - assets/images/gaming.jpg
     - assets/images/power.jpg
-    - assets/images/appliance/air_condition.jpg
-    - assets/images/appliance/blender.jpg
-    - assets/images/appliance/dry_iron.jpg
-    - assets/images/appliance/humidifier.jpg
-    - assets/images/appliance/microwave.jpg
-    - assets/images/appliance/refrigerator.jpg
-    - assets/images/appliance/washing_machine.jpg
-    - assets/images/appliance/sandwich.jpg
+    - assets/images/appliance/air_condition.png
+    - assets/images/appliance/blender.png
+    - assets/images/appliance/dry_iron.png
+    - assets/images/appliance/humidifier.png
+    - assets/images/appliance/microwave.png
+    - assets/images/appliance/refrigerator.png
+    - assets/images/appliance/washing_machine.png
+    - assets/images/appliance/sandwich.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
