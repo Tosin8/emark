@@ -1,7 +1,7 @@
 import 'package:emark/models/top_deals/appliances.dart';
 import 'package:flutter/material.dart';
 
-import '../sectiontitle.dart';
+import '../../components/sectiontitle.dart';
 import 'htopcard.dart';
 import 'ltopcard.dart';
 

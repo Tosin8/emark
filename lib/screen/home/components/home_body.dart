@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'appliance/topdeals.dart';
-import 'categories.dart';
-import 'collection_card.dart';
+import '../categories/appliance/topdeals.dart';
+import '../categories/category/categories.dart';
+
+import '../categories/collection/collection_card.dart';
 import 'discount_banner.dart';
 import 'header.dart';
 
