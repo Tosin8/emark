@@ -49,7 +49,7 @@ class _BodyState extends State<Body> {
     ApplianceTopDeals(), 
     SizedBox(height: 20), 
     PhonesTopDeals(), 
-    
+    SizedBox(height: 20), 
      
       ],
     ),
