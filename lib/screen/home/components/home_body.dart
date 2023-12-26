@@ -42,8 +42,47 @@ class _BodyState extends State<Body> {
           crossAxisSpacing: 10, 
           mainAxisSpacing: 5,
           children: [
-            Collections(),
+            Collections(
+              image: 'assets/images/supermarket.jpg',
+              text: 'Supermarket Deals', 
+              press: () {  },
+               ),
 
+Collections(
+              image: 'assets/images/electronic.jpg',
+              text: 'Electronic \nDeals', 
+              press: () {  },
+               ),
+               Collections(
+              image: 'assets/images/appliance.jpg',
+              text: 'Appliance \nDeals', 
+              press: () {  },
+               ),Collections(
+              image: 'assets/images/beauty.jpg',
+              text: 'Beauty \nDeals', 
+              press: () {  },
+               ),Collections(
+              image: 'assets/images/phone.jpg',
+              text: 'Phone Deals', 
+              press: () {  },
+               ),
+               Collections(
+              image: 'assets/images/fashion.jpg',
+              text: 'Fashion \nDeals', 
+              press: () {  },
+               ),Collections(
+              image: 'assets/images/fitness.jpg',
+              text: 'Fitness \nDeals', 
+              press: () {  },
+               ),Collections(
+              image: 'assets/images/gaming.jpg',
+              text: 'Gaming \nDeals', 
+              press: () {  },
+               ),Collections(
+              image: 'assets/images/power.jpg',
+              text: 'Power \nDeals', 
+              press: () {  },
+               ),
              
            
           ],),
@@ -69,14 +108,14 @@ final VoidCallback press;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){}, 
+      onTap: press, 
       child: ClipRRect(
         borderRadius: BorderRadius.circular(6),
         child: Container(
           
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             image: DecorationImage(
-              image:  AssetImage('assets/images/supermarket.jpg'), fit: BoxFit.contain
+              image:  AssetImage(image), fit: BoxFit.cover
               ), 
           ),
           child: Container(
@@ -85,7 +124,7 @@ final VoidCallback press;
                 colors: [Colors.black.withOpacity(0.4), Colors.black38.withOpacity(0.6),], 
               begin: Alignment.bottomCenter)
             ),
-            child: Align(child: Text('Supermarket Deals', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),textAlign: TextAlign.center,)),
+            child: Align(child: Text(text, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),textAlign: TextAlign.center,)),
           ),
         ),
       ),
