@@ -1,7 +1,7 @@
 name: emark
 description: An overall ecommerce mobile application.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: ">=3.1.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,7 +38,7 @@ dependencies:
   flutter_svg: ^2.0.7
   page_transition: ^2.1.0
   shared_preferences: ^2.2.2
-  shimmer: ^3.0.0
+  shimmer_animation: ^2.1.0+1
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
@@ -48,15 +48,14 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  android: 'launcher_icon'
+  android: "launcher_icon"
   ios: true
-  image_path: 'assets/icons/app_logo.png'
+  image_path: "assets/icons/app_logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

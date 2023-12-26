@@ -1,6 +1,7 @@
 import 'package:emark/models/top_deals/appliances.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 import '../../components/sectiontitle.dart';
 import 'htopcard.dart';
@@ -18,11 +19,10 @@ class ApplianceTopDeals extends StatelessWidget {
         const SizedBox(height: 20), 
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Shimmer.fromColors(
-            baseColor: Colors.grey.shade100, 
-            highlightColor: Colors.grey.shade100, 
-            period: const Duration(seconds: 3),
-            enabled: true,  
+          child: Shimmer(
+           duration:Duration(seconds: 3), 
+           interval: Duration(seconds: 5),
+             
 
             child: Column(
               children: [
