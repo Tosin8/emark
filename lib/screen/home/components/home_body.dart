@@ -12,21 +12,57 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return  const SafeArea(
+    return  SafeArea(
         child: SingleChildScrollView(
             child: Column(
       children:  [
-        SizedBox(height: 20),
-        HomeHeader(),
-        SizedBox(height: 20),
-        DiscountBanner(),
-        SizedBox(height: 20),
-        Categories(),
-        SizedBox(height: 30),
-        SpeicialOffers(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
+        const HomeHeader(),
+        const SizedBox(height: 20),
+        const DiscountBanner(),
+        const SizedBox(height: 20),
+        const Categories(),
+        const SizedBox(height: 30),
+        const SpeicialOffers(),
+        const SizedBox(height: 20),
        
-    PopularProducts()
+    const PopularProducts(), 
+    const SizedBox(height: 20), 
+    const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Text('Our Collections', style: TextStyle(fontSize: 18),),
+    ), 
+    const SizedBox(height: 20), 
+    Expanded(
+      child: GridView.count(
+        crossAxisCount: 2, 
+        primary: false, 
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10, 
+        mainAxisSpacing: 10,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image:  AssetImage('assets/images/supermarket.jpg')
+                ), 
+            ),
+          ),
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image:  AssetImage('assets/images/supermarket.jpg')
+                ), 
+            ),
+          ),Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image:  AssetImage('assets/images/supermarket.jpg')
+                ), 
+            ),
+          ), 
+        ],),
+    ),
      
       ],
     ),
