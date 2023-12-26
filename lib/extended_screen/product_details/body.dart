@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/product.dart';
+import '../../models/popular_product.dart';
 
 class DetailScreenBody extends StatelessWidget {
   final Product product;

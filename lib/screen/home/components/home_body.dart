@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'home_widgets.dart';
+import 'categories.dart';
+import 'collection_card.dart';
+import 'discount_banner.dart';
+import 'header.dart';
+
+import 'popular_products.dart';
+import 'sectiontitle.dart';
+import 'special_offers.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
