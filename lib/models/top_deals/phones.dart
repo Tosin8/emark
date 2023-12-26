@@ -10,31 +10,31 @@ class hTopPhones {
     List<hTopPhones> htopPhones = [
       hTopPhones(
         // id: 1, 
-        image: ['assets/images/appliance/air_condition.png'], 
+        image: ['assets/images/phone/umigidi.png'], 
         price: 30.44,
-        title: "Aeon 1Hp Split Air Condition", 
+        title: "Umigidi A11 Mist Blue", 
         description: 'This is the best product ever made', 
       ), 
 
        hTopPhones(
         // id: 2, 
-        image: ['assets/images/appliance/blender.png'], 
+        image: ['assets/images/appliance/samsung.png'], 
         price: 24.14,
-        title: "Binaton 1.5 Litres Blender", 
+        title: "Samsung Galaxy A04 Black", 
         description: 'This is the best product ever made', 
       ), 
        hTopPhones(
         // id: 3, 
-        image: ['assets/images/appliance/dry_iron.png'], 
+        image: ['assets/images/appliance/spark10c.png'], 
         price: 30.44,
-        title: "Binaton Smoother Dry Iron", 
+        title: "Tecno Spark 10C Blue", 
         description: 'This is the best product ever made', 
       ), 
        hTopPhones(
         // id: 4, 
-        image: ['assets/images/appliance/humidifier.png'], 
+        image: ['assets/images/appliance/redmia2.png'], 
         price: 14.24,
-        title: "21 double spray humidifier", 
+        title: "Redmi A2 Light Blue", 
         description: 'This is the best product ever made', 
       ), 
       
@@ -54,30 +54,30 @@ class hTopPhones {
 
         lTopPhones(
         // id: 5, 
-        image: ['assets/images/appliance/microwave.png'], 
+        image: ['assets/images/appliance/redmi12.png'], 
         price: 30.44,
-        title: "Hisense 20 Litres Microwave", 
+        title: "Redmi 12 Midnight Black", 
         description: 'This is the best product ever made', 
       ), 
        lTopPhones(
         // id: 6, 
-        image: ['assets/images/appliance/refrigerator.png'], 
+        image: ['assets/images/appliance/spark10c_black.png'], 
         price: 30.44,
-        title: "Midea 43 Litres Refrigerator", 
+        title: "Tecno Spark 10C Black", 
         description: 'This is the best product ever made', 
       ), 
        lTopPhones(
         // id: 7, 
-        image: ['assets/images/appliance/sandwich.png'], 
+        image: ['assets/images/appliance/hot30i.png'], 
         price: 30.44,
-        title: "2 Slice Sandwich Maker", 
+        title: "Infinix Hot 30i", 
         description: 'This is the best product ever made', 
       ), 
        lTopPhones(
         // id: 8, 
-        image: ['assets/images/appliance/washing_machine.png'], 
+        image: ['assets/images/appliance/redmia2dark.png'], 
         price: 30.44,
-        title: "Twin Tub Washing Machine", 
+        title: "Redmi A2 Dark", 
         description: 'This is the best product ever made', 
       ), 
        ];
