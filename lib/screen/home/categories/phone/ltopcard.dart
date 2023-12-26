@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:emark/models/top_deals/appliances.dart';
 import 'package:emark/widgets/constants.dart';
 
 import '../../../../models/top_deals/phones.dart';
