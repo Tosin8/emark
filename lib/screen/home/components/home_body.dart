@@ -1,3 +1,4 @@
+import 'package:emark/screen/home/categories/phone/topdeals.dart';
 import 'package:flutter/material.dart';
 
 import '../categories/appliance/topdeals.dart';
@@ -47,6 +48,7 @@ class _BodyState extends State<Body> {
     
     ApplianceTopDeals(), 
     SizedBox(height: 20), 
+    PhonesTopDeals(), 
     
      
       ],

@@ -9,11 +9,11 @@ class PhoneLTopCard extends StatelessWidget {
     super.key, 
   this.width = 140,
    this.aspectRatio = 1.02, 
- required this.ltopphones, 
+ required this.ltopphone, 
    });
 
 final double width, aspectRatio; 
-final lTopPhones ltopphones; 
+final lTopPhone ltopphone; 
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,15 @@ final lTopPhones ltopphones;
             color: kSecondaryColor.withOpacity(0.2), 
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Image.asset(ltopphones.image[0]),
+          child: Image.asset(ltopphone.image[0]),
           ),), 
           const SizedBox(height: 5), 
-          Text(ltopphones.title,
+          Text(ltopphone.title,
            style: const TextStyle(color: Colors.black),
            maxLines: 2,), 
            Row(
              children: [
-               Text('\$${ltopphones.price}', style: const TextStyle(color: kPrimaryColor, fontWeight: FontWeight.w600, fontSize: 18),),
+               Text('\$${ltopphone.price}', style: const TextStyle(color: kPrimaryColor, fontWeight: FontWeight.w600, fontSize: 18),),
              ],
            )
         ],
