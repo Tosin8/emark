@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../models/product.dart';
+import '../models/popular_product.dart';
 import 'constants.dart';
 
 class ProductCard extends StatelessWidget {

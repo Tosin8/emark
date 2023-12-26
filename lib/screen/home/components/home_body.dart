@@ -44,6 +44,7 @@ class _BodyState extends State<Body> {
     SizedBox(height: 20), 
     SectionTitle(text: 'Appliances Top Deals', press: (){}), 
     SizedBox(height: 20), 
+    ApplianceTopCard(), 
     
      
       ],
@@ -55,3 +56,11 @@ class _BodyState extends State<Body> {
   }
 }
 
+class ApplianceTopCard extends StatelessWidget {
+  const ApplianceTopCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
