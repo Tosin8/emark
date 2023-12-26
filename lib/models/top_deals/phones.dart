@@ -70,14 +70,14 @@ class hTopPhone {
         // id: 7, 
         image: ['assets/images/phone/hot30i.png'], 
         price: 30.44,
-        title: "Infinix Hot 30i", 
+        title: "Infinix Hot 30i    Black", 
         description: 'This is the best product ever made', 
       ), 
        lTopPhone(
         // id: 8, 
         image: ['assets/images/phone/redmia2dark.png'], 
         price: 30.44,
-        title: "Redmi A2 Dark", 
+        title: "Xaomi Redmi A2 Dark", 
         description: 'This is the best product ever made', 
       ), 
        ];
