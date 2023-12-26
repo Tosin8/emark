@@ -1,4 +1,4 @@
-import 'package:emark/screen/form/forgot_pass/forgot_pass.dart';
+import 'package:emark/extended_screen/form/forgot_pass/forgot_pass.dart';
 import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

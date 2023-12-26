@@ -120,6 +120,10 @@ flutter:
     - assets/icons/user_icon.svg
     - assets/icons/user.svg
     - assets/icons/nigeria.png
+    - assets/icons/orders.svg
+    - assets/icons/pending.svg
+    - assets/icons/recent.svg
+    - assets/icons/wallet.svg
     - assets/images/products/glap.png
     - assets/images/products/image_popular_product_3.png
     - assets/images/products/image_banner_2.png
@@ -141,6 +145,12 @@ flutter:
     - assets/images/products/wireless_headset.png
     - assets/images/banner.png
     - assets/images/sub-image/user_profile.jpg
+    - assets/images/supermarket.jpg
+    - assets/images/electronic.jpg
+    - assets/images/appliance.jpg
+    - assets/images/beauty.jpg
+    - assets/images/phone.jpg
+    - assets/images/fashion.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

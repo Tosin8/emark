@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -13,6 +14,10 @@ class AccountBody extends StatelessWidget {
         children: [
           const ProfilePic(), 
           const SizedBox(height: 20),
+         
+              const Text('Mary Jones', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+           
           ProfileMenu(
             text: 'My Account', 
             icon: 'assets/icons/user_icon.svg', 
@@ -27,14 +32,29 @@ class AccountBody extends StatelessWidget {
             icon: 'assets/icons/settings.svg', 
             press: () {  },
           ),  ProfileMenu(
+            text: 'Orders',  
+            icon: 'assets/icons/orders.svg', 
+            press: () {  },
+          ),  ProfileMenu(
+            text: 'Pending Reviews',  
+            icon: 'assets/icons/pending.svg', 
+            press: () {  },
+          ) , 
+          ProfileMenu(
+            text: 'Recently Viewed',  
+            icon: 'assets/icons/recent.svg', 
+            press: () {  },
+          ) , 
+           ProfileMenu(
             text: 'Help Center',  
             icon: 'assets/icons/question_mark.svg', 
             press: () {  },
-          ),  ProfileMenu(
+          ) ,  ProfileMenu(
             text: 'Log Out',  
             icon: 'assets/icons/log_out.svg', 
             press: () {  },
-          ) , 
+          ) ,
+          const SizedBox(height: 20,) 
           ] ),
     );
   }
