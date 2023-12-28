@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../models/popular_product.dart';
 
@@ -13,10 +14,28 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: Padding(padding: const EdgeInsets.only(left: 20), 
-        child: IconButton(
-          onPressed: Navigator.pop(context), 
-          icon: Icon(Icons.arrow_back_ios)),
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20), 
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed:()=> Navigator.pop(context), 
+              icon: const Icon(Icons.arrow_back_ios), 
+              ),
+              Container(padding: EdgeInsets.symmetric(horizontal: 14, vertical: 5), 
+              decoration: BoxDecoration(color: Colors.white),
+
+                child: Row(
+                  children: [
+                    Text('4.5', style: TextStyle(fontWeight: FontWeight.w600),), 
+                    SizedBox(width: 5), 
+                    SvgPicture.asset('assets/icons/star_icon.svg')
+                  ],
+                )
+              )
+          ],
+        ),
       ),
      ) );
   }
