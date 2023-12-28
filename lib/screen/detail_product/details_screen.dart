@@ -11,8 +11,14 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-    );
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: Padding(padding: const EdgeInsets.only(left: 20), 
+        child: IconButton(
+          onPressed: Navigator.pop(context), 
+          icon: Icon(Icons.arrow_back_ios)),
+      ),
+     ) );
   }
 }
 
