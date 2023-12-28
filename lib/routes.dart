@@ -4,6 +4,7 @@ import 'package:emark/screen/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'extended_screen/form/signup/signup.dart';
+import 'screen/detail_product/details_screen.dart';
 import 'screen/home/home.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -12,5 +13,5 @@ final Map<String, WidgetBuilder> routes = {
   ForgotPassword.routeName: (context) => const ForgotPassword(),
   Home.routeName: (context) => const Home(),
   SignUp.routeName: (context) => const SignUp(),
-  //DetailsScreen.routeName: (context) => const DetailsScreen(),
+  DetailsScreen.routeName: (context) => const DetailsScreen(),
 };
