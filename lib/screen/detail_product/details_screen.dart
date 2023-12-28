@@ -40,7 +40,7 @@ class DetailsScreen extends StatelessWidget {
                   ],
                 )
               ),
-              SizedBox(width: 10,)
+              SizedBox(width:30,)
           ],
         ),
       );
