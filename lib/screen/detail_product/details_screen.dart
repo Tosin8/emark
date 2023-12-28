@@ -8,6 +8,13 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
+}
+
+
+// using name route , making the need to create a arguments class. 
+
+class ProductDetailsArguments {
+  
 }
