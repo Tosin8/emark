@@ -1,4 +1,5 @@
 import 'package:emark/models/popular_product.dart';
+import 'package:emark/screen/detail_product/details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/product_card.dart';
@@ -24,6 +25,7 @@ class PopularProducts extends StatelessWidget {
               ...List.generate(demoProducts.length,
                (index) => ProductCard(
                 product: demoProducts[index], 
+                press:() =>  Navigator.pushNamed(context, DetailsScreen.routeName),
                 ), 
                 ),
                 const SizedBox(width: 20), 
