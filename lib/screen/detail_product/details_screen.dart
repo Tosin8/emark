@@ -1,5 +1,6 @@
 
 
+import 'package:emark/screen/detail_product/components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -11,6 +12,8 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Object? arguments = ModalRoute.of(context)?.settings.arguments ;
+ 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -40,9 +43,11 @@ class DetailsScreen extends StatelessWidget {
                   ],
                 )
               ),
-              SizedBox(width: 20,)
+              const SizedBox(width: 20,)
           ],
         ),
+        body: DetailBody(
+          product: arguments?.product)
       );
      
   }
