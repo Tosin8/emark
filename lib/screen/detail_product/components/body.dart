@@ -12,7 +12,19 @@ class DetailBody extends StatelessWidget {
       children: [
         SizedBox(
           width: 200,
-          child: AspectRatio(aspectRatio: 1),
+          child: AspectRatio(
+            aspectRatio: 1, 
+            child: Image.asset(product.images[0]), 
+            ),
+        ), 
+        Row(
+          children: [
+            Container(
+              height: 40, width: 40, decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(30)
+              ),
+            )
+          ],
         )
       ],
     );
