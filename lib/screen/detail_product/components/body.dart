@@ -17,7 +17,19 @@ class _DetailBodyState extends State<DetailBody> {
     return Column(
       children: [
         ProductImages(product: widget.product),
-        TopRoundedContainer()
+        TopRoundedContainer(
+          color: Colors.white, 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+          [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20), 
+              child: Text(
+                product.title, ),
+            )
+          ]
+        ))
       ],
     );
   }
@@ -25,8 +37,11 @@ class _DetailBodyState extends State<DetailBody> {
 
 class TopRoundedContainer extends StatelessWidget {
   const TopRoundedContainer({
-    super.key,
+    super.key, required this.color, required this.child,
   });
+
+  final Color color; 
+  final Widget child; 
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +50,15 @@ class TopRoundedContainer extends StatelessWidget {
       margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.only(top: 20),
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         
-        color: Colors.white, 
+        color: color, 
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
            topRight: Radius.circular(40), 
         )
       ),
+      child: child,
     );
   }
 }
