@@ -8,6 +8,13 @@ class DetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        SizedBox(
+          width: 200,
+          child: AspectRatio(aspectRatio: 1),
+        )
+      ],
+    );
   }
 }
