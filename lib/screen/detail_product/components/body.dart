@@ -40,7 +40,8 @@ class ProductImages extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            buildSmallPreview()
+          ...List.generate(product.images.length,
+           (index) => buildSmallPreview())
           ],
         )
       ],
