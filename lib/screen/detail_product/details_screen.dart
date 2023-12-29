@@ -15,6 +15,8 @@ class DetailsScreen extends StatelessWidget {
     // final ProductDetailsArguments arguments = 
     // ModalRoute.of(context)?.settings.arguments; 
 
+
+final arguments = ModalRoute.of(context)?.settings.arguments as ProductDetailsArguments;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -48,7 +50,10 @@ class DetailsScreen extends StatelessWidget {
           ],
         ),
         body: DetailBody(
-          product: arguments?.product)
+          product: 
+          arguments.product, 
+          
+          ), 
       );
      
   }
@@ -60,6 +65,6 @@ class DetailsScreen extends StatelessWidget {
 class ProductDetailsArguments {
   final Product product;
 
-  ProductDetailsArguments({required this.product}); 
+  ProductDetailsArguments(this.product); 
 
 }
