@@ -41,15 +41,18 @@ class ProductImages extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           ...List.generate(product.images.length,
-           (index) => buildSmallPreview())
+           (index) => buildSmallPreview(index), 
+           )
           ],
         )
       ],
     );
   }
 
-  Container buildSmallPreview() {
+  Container buildSmallPreview(int index) {
     return Container(
+      margin: EdgeInsets.only(right: 15), 
+      
             padding: EdgeInsets.all(8), 
             height: 40, width: 40,
              decoration: BoxDecoration(
@@ -57,7 +60,7 @@ class ProductImages extends StatelessWidget {
               borderRadius: BorderRadius.circular(10), 
               border: Border.all(color: kPrimaryColor)
             ),
-            child: Image.asset(product.images[0]), 
+            child: Image.asset(product.images[index]), 
           );
   }
 }
