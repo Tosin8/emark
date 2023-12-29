@@ -17,16 +17,32 @@ class _DetailBodyState extends State<DetailBody> {
     return Column(
       children: [
         ProductImages(product: widget.product),
-        Container(
-          height: 300, 
-          margin: const EdgeInsets.only(top: 20),
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            
-            color: Colors.white, 
-          ),
-        )
+        TopRoundedContainer()
       ],
+    );
+  }
+}
+
+class TopRoundedContainer extends StatelessWidget {
+  const TopRoundedContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300, 
+      margin: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        
+        color: Colors.white, 
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40),
+           topRight: Radius.circular(40), 
+        )
+      ),
     );
   }
 }
