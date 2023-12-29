@@ -9,6 +9,20 @@ class DetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ProductImages(product: product);
+  }
+}
+
+class ProductImages extends StatelessWidget {
+  const ProductImages({
+    super.key,
+    required this.product,
+  });
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
@@ -21,17 +35,23 @@ class DetailBody extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.all(8), 
-              height: 40, width: 40, decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(10), 
-                border: Border.all(color: kPrimaryColor)
-              ),
-              child: Image.asset(product.images[0]), 
-            )
+            buildSmallPreview()
           ],
         )
       ],
     );
+  }
+
+  Container buildSmallPreview() {
+    return Container(
+            padding: EdgeInsets.all(8), 
+            height: 40, width: 40,
+             decoration: BoxDecoration(
+              color: Colors.white, 
+              borderRadius: BorderRadius.circular(10), 
+              border: Border.all(color: kPrimaryColor)
+            ),
+            child: Image.asset(product.images[0]), 
+          );
   }
 }
