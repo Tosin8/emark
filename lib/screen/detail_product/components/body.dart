@@ -1,3 +1,4 @@
+import 'package:emark/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/popular_product.dart';
@@ -18,11 +19,15 @@ class DetailBody extends StatelessWidget {
             ),
         ), 
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              padding: EdgeInsets.all(8), 
               height: 40, width: 40, decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30)
+                color: Colors.white, borderRadius: BorderRadius.circular(10), 
+                border: Border.all(color: kPrimaryColor)
               ),
+              child: Image.asset(product.images[0]), 
             )
           ],
         )

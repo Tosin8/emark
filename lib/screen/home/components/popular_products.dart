@@ -26,13 +26,14 @@ class PopularProducts extends StatelessWidget {
                (index) => ProductCard(
                 product: demoProducts[index], 
                 press:() =>  
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DetailsScreen())), 
-                //Navigator.pushNamed(context, DetailsScreen.routeName, 
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DetailsScreen())
+                ), 
+//                 Navigator.pushNamed(context, DetailsScreen.routeName, 
 //                 arguments: ProductDetailsArguments(
 // product: demoProducts[index],
 
 //                 ), 
-               // ),
+//                ),
                 ), 
                 ),
                 const SizedBox(width: 20), 

@@ -12,7 +12,8 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailsArguments arguments = ModalRoute.of(context).settings.arguments; 
+    // final ProductDetailsArguments arguments = 
+    // ModalRoute.of(context)?.settings.arguments; 
 
     return Scaffold(
       appBar: AppBar(
