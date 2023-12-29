@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 
 import '../../../models/popular_product.dart';
 
-class DetailBody extends StatelessWidget {
+class DetailBody extends StatefulWidget {
   final Product product; 
   const DetailBody({super.key, required this.product});
 
   @override
+  State<DetailBody> createState() => _DetailBodyState();
+}
+
+class _DetailBodyState extends State<DetailBody> {
+  @override
   Widget build(BuildContext context) {
-    return ProductImages(product: product);
+    return ProductImages(product: widget.product);
   }
 }
 
