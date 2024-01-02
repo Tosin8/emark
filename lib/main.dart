@@ -14,17 +14,20 @@ import 'screen/splash/splash_screen.dart';
 // Future main()  async {
 //   WidgetsFlutterBinding.ensureInitialized(); 
 
-//   final prefs = await SharedPreferences.getInstance(); 
+   
 //   // ignore: unused_local_variable
-//   final showHome = prefs.getBool('showHome') ?? false;
+   
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+final prefs = await SharedPreferences.getInstance(); 
+final showHome = prefs.getBool('showHome') ?? false;
 
 await Firebase.initializeApp(
   options: DefaultFirebaseOptions.currentPlatform, 
 ); 
   runApp(  MyApp(showHome: showHome,)); 
+
     
     //showHome: showHome)); 
 }
