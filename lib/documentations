@@ -1,6 +1,6 @@
 App design sections: 
 ____________________________
-  1. The backend
+  1. THE BACKEND
   * Fetch Categories
   * Fetch Brands
   * Fetch Products ( Create stream to reduce the reads and writes of firestore)
@@ -8,3 +8,9 @@ ____________________________
   * Add, update or remove user addresses
   * Add to cart ( from product care, single and variation product from product details )
   * Checkout and create orders. 
+
+ 2. THE CORE CONCEPTS
+ *  Reusable light and dark theme
+ *  Firebase Authentication, firestore and Storage
+ * Shared Preferences - for local storage
+ * GetX / Bloc State Management 

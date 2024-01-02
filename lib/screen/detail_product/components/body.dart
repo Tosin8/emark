@@ -26,7 +26,7 @@ class _DetailBodyState extends State<DetailBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20), 
               child: Text(
-                product.title, ),
+                widget.product.title, ),
             )
           ]
         ))
