@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "307255061308",
+    "project_id": "emark-b938e",
+    "storage_bucket": "emark-b938e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307255061308:android:33407d117aa3d451480c39",
+        "android_client_info": {
+          "package_name": "com.example.emark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuamM-yJHlTSQ1SZcTfoqIh9zc4ge2r5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
