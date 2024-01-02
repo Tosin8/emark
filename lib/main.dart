@@ -1,4 +1,6 @@
+import 'package:emark/firebase_options.dart';
 import 'package:emark/widgets/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,14 +11,22 @@ import 'screen/splash/splash_screen.dart';
 //   runApp(const MyApp());
 // }
 
-Future main()  async {
-  WidgetsFlutterBinding.ensureInitialized(); 
+// Future main()  async {
+//   WidgetsFlutterBinding.ensureInitialized(); 
 
-  final prefs = await SharedPreferences.getInstance(); 
-  // ignore: unused_local_variable
-  final showHome = prefs.getBool('showHome') ?? false;
+//   final prefs = await SharedPreferences.getInstance(); 
+//   // ignore: unused_local_variable
+//   final showHome = prefs.getBool('showHome') ?? false;
 
-  runApp( MyApp(showHome: showHome)); 
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform, 
+); 
+  runApp(  MyApp(showHome: showHome,)); 
+    
+    //showHome: showHome)); 
 }
 class MyApp extends StatelessWidget {
   final bool showHome; 
