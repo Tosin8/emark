@@ -36,8 +36,7 @@ void dispose() {
 
 @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(
+    return  Stack(
         children:[
            Container(
           child: PageView(
@@ -149,7 +148,7 @@ void dispose() {
                     ],
                     )
                     )
-      )]));
+      )]);
                
                  
         
