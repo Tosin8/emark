@@ -23,7 +23,7 @@ class AccountBody extends StatelessWidget {
               topLeft: Radius.circular(20) , 
               topRight: Radius.circular(20)),  color: Colors.black,
           ),
-            child: const Padding(
+            child:  Padding(
               padding: EdgeInsets.all(15.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,9 +45,25 @@ class AccountBody extends StatelessWidget {
 
                     SettingsMenuTile(mainTitle: 'Load Data', subTitle: 'Upload files to your cloud', 
                     ),SettingsMenuTile(mainTitle: 'Geolocation', subTitle: 'Set recommendation based on location', 
-                    ),SettingsMenuTile(mainTitle: 'Reviews', subTitle: 'Set shopping delivery address', 
-                    ), SettingsMenuTile(mainTitle: 'Notifications', subTitle: 'Set shopping delivery address', 
-                    ),
+                    ),SettingsMenuTile(mainTitle: 'Offline Mode', subTitle: 'Continue to shop until you\'re conntected online', 
+                    ), 
+                    
+                    SizedBox(height: 20), 
+                    GestureDetector( 
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20), 
+                          border: Border.all(color: Colors.white),
+                      
+                          
+                        ),
+                        child: Align(child: Text('Logout', style: TextStyle(color: Colors.white, fontSize: 18),),),
+                      ),
+                    )
                 ],
               ),
             ),
