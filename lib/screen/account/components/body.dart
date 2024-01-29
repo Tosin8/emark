@@ -1,7 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'profile_menu.dart';
 import 'profile_heading.dart';
+import 'profile_menu.dart';
 
 class AccountBody extends StatelessWidget {
   const AccountBody({super.key});
@@ -31,7 +32,8 @@ class AccountBody extends StatelessWidget {
                   
                     Text('Account Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),), 
                     SizedBox(height: 20), 
-                    SettingsMenuTile()
+                    SettingsMenuTile(mainTitle: 'My Addresses', subTitle: 'Set shopping delivery address', 
+                    )
                 ],
               ),
             ),
@@ -44,15 +46,20 @@ class AccountBody extends StatelessWidget {
 
 class SettingsMenuTile extends StatelessWidget {
   const SettingsMenuTile({
-    super.key,
-  });
+    Key? key,
+    required this.mainTitle,
+    required this.subTitle,
+  }) : super(key: key);
+
+final String mainTitle; 
+final String subTitle; 
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
-      title: const Text('My Addresses', style: TextStyle(color: Colors.white, fontSize: 18),),
-      subtitle: Text('Set shopping delivery address', style: TextStyle(
+      title:  Text(mainTitle, style: TextStyle(color: Colors.white, fontSize: 18),),
+      subtitle: Text(subTitle, style: TextStyle(
         color: Colors.white.withOpacity(0.6)),),
     );
   }
