@@ -20,6 +20,8 @@ class AccountBody extends StatelessWidget {
                 
               ),
               title: Text('Lizzy Jones', style: TextStyle(color: Colors.black, fontSize: 18),),
+              subtitle: Text('lizzyjones@gmail.com'),
+              trailing: IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
             ),
           )
         ],
