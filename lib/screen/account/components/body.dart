@@ -12,6 +12,7 @@ class AccountBody extends StatelessWidget {
       child: Column(
         children: [
           Container(
+            
             child: ListTile(
               leading: CircleAvatar(
                 backgroundImage: const AssetImage('assets/images/sub-image/user_profile.jpg', ),
@@ -23,6 +24,18 @@ class AccountBody extends StatelessWidget {
               subtitle: Text('lizzyjones@gmail.com'),
               trailing: IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
             ),
+          ),
+          SizedBox(height: 10), 
+          Container( 
+           
+            width: double.infinity, 
+            height: 800,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20) , 
+              topRight: Radius.circular(20)),  color: Colors.black,
+          ),
+            child: Text('Hello'),
           )
         ],
       )
