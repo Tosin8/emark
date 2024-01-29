@@ -17,7 +17,7 @@ class AccountBody extends StatelessWidget {
           Container( 
            
             width: double.infinity, 
-            height: 800,
+            height: 1000,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20) , 
@@ -33,7 +33,21 @@ class AccountBody extends StatelessWidget {
                     Text('Account Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),), 
                     SizedBox(height: 20), 
                     SettingsMenuTile(mainTitle: 'My Addresses', subTitle: 'Set shopping delivery address', 
-                    )
+                    ), 
+                    SettingsMenuTile(mainTitle: 'My Orders', subTitle: 'In-progress and Completed Orders', 
+                    ),SettingsMenuTile(mainTitle: 'My Coupons', subTitle: 'List of all the discounted coupons', 
+                    ),SettingsMenuTile(mainTitle: 'Notifications', subTitle: 'Set shopping delivery address', 
+                    ),SettingsMenuTile(mainTitle: 'Account Privacy', subTitle: 'Manage data storage and connected accounts', 
+                    ),SettingsMenuTile(mainTitle: 'Reviews', subTitle: 'Set shopping delivery address', 
+                    ), 
+                    SizedBox(height: 20), 
+                    Text('App Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),), 
+
+                    SettingsMenuTile(mainTitle: 'Load Data', subTitle: 'Upload files to your cloud', 
+                    ),SettingsMenuTile(mainTitle: 'Geolocation', subTitle: 'Set recommendation based on location', 
+                    ),SettingsMenuTile(mainTitle: 'Reviews', subTitle: 'Set shopping delivery address', 
+                    ), SettingsMenuTile(mainTitle: 'Notifications', subTitle: 'Set shopping delivery address', 
+                    ),
                 ],
               ),
             ),
@@ -56,11 +70,14 @@ final String subTitle;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
-      title:  Text(mainTitle, style: TextStyle(color: Colors.white, fontSize: 18),),
-      subtitle: Text(subTitle, style: TextStyle(
-        color: Colors.white.withOpacity(0.6)),),
+    return GestureDetector( 
+      onTap: (){}, 
+      child: ListTile(
+        leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
+        title:  Text(mainTitle, style: TextStyle(color: Colors.white, fontSize: 18),),
+        subtitle: Text(subTitle, style: TextStyle(
+          color: Colors.white.withOpacity(0.6)),),
+      ),
     );
   }
 }

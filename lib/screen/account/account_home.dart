@@ -12,6 +12,7 @@ class Account extends StatelessWidget {
     appBar: AppBar(
       title: Text('Account'), 
       automaticallyImplyLeading: false, 
+      backgroundColor: Colors.white,
       centerTitle: true),
       body: AccountBody(), 
     );
