@@ -22,17 +22,39 @@ class AccountBody extends StatelessWidget {
               topLeft: Radius.circular(20) , 
               topRight: Radius.circular(20)),  color: Colors.black,
           ),
-            child: const Column(
-              children: [
-                SizedBox(height: 12), 
-                
-                  Text('Account Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),)
-              ],
+            child: const Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 12), 
+                  
+                    Text('Account Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),), 
+                    SizedBox(height: 20), 
+                    SettingsMenuTile()
+                ],
+              ),
             ),
           )
         ],
       
     )); 
+  }
+}
+
+class SettingsMenuTile extends StatelessWidget {
+  const SettingsMenuTile({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
+      title: const Text('My Addresses', style: TextStyle(color: Colors.white, fontSize: 18),),
+      subtitle: Text('Set shopping delivery address', style: TextStyle(
+        color: Colors.white.withOpacity(0.6)),),
+    );
   }
 }
 
