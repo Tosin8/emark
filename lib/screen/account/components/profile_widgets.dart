@@ -89,6 +89,7 @@ final String subTitle;
 }
 
 class _SettingsMenuBelowTileState extends State<SettingsMenuBelowTile> {
+  bool isSwitched = false; 
   @override
   Widget build(BuildContext context) {
     return GestureDetector( 
@@ -100,14 +101,16 @@ class _SettingsMenuBelowTileState extends State<SettingsMenuBelowTile> {
         subtitle: Text(widget.subTitle, style: TextStyle(
           color: Colors.white.withOpacity(0.6)),
           ),
-          trailing: Switch(value: isSwitched,
+          trailing: Switch(
+            activeColor: Colors.white,
+            value: isSwitched,
            onChanged: (value) {
             setState((){
               isSwitched = value;
             });
 
-      ),
-    );
+   } ),
+    ));
   }
 }
 
