@@ -16,9 +16,9 @@ class profile_heading extends StatelessWidget {
           backgroundColor: Theme.of(context).primaryColorDark,
           
         ),
-        title: Text('Lizzy Jones', style: TextStyle(color: Colors.black, fontSize: 18),),
-        subtitle: Text('lizzyjones@gmail.com'),
-        trailing: IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
+        title: const Text('Lizzy Jones', style: TextStyle(color: Colors.black, fontSize: 18),),
+        subtitle: const Text('lizzyjones@gmail.com'),
+        trailing: IconButton(onPressed: (){}, icon: const Icon(Icons.edit)),
       ),
     );
   }
@@ -43,7 +43,7 @@ class accountbtn extends StatelessWidget {
       
           
         ),
-        child: Align(child: Text('Logout', style: TextStyle(color: Colors.white, fontSize: 18),),),
+        child: const Align(child: Text('Logout', style: TextStyle(color: Colors.white, fontSize: 18),),),
       ),
     );
   }
@@ -65,9 +65,47 @@ final String subTitle;
       onTap: (){}, 
       child: ListTile(
         leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
-        title:  Text(mainTitle, style: TextStyle(color: Colors.white, fontSize: 18),),
+        title:  Text(mainTitle, style: const TextStyle(color: Colors.white, fontSize: 18),),
         subtitle: Text(subTitle, style: TextStyle(
           color: Colors.white.withOpacity(0.6)),),
+      ),
+    );
+  }
+}
+
+
+class SettingsMenuBelowTile extends StatefulWidget {
+  const SettingsMenuBelowTile({
+    Key? key,
+    required this.mainTitle,
+    required this.subTitle,
+  }) : super(key: key);
+
+final String mainTitle; 
+final String subTitle; 
+
+  @override
+  State<SettingsMenuBelowTile> createState() => _SettingsMenuBelowTileState();
+}
+
+class _SettingsMenuBelowTileState extends State<SettingsMenuBelowTile> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector( 
+      onTap: (){}, 
+      child: ListTile(
+        leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
+        title:  Text(widget.mainTitle, style: const TextStyle(color: Colors.white, fontSize: 18),),
+
+        subtitle: Text(widget.subTitle, style: TextStyle(
+          color: Colors.white.withOpacity(0.6)),
+          ),
+          trailing: Switch(value: isSwitched,
+           onChanged: (value) {
+            setState((){
+              isSwitched = value;
+            });
+
       ),
     );
   }
