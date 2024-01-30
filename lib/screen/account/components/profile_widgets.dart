@@ -75,10 +75,12 @@ final String subTitle;
 
 
 class appSettingMenu extends StatefulWidget {
-  const appSettingMenu({
+  const appSettingMenu({super.key,    required this.mainTitle, required this.subTitle
     super.key,
   });
 
+String mainTitle; 
+String subTitle; 
   @override
   State<appSettingMenu> createState() => _appSettingMenuState();
 }
