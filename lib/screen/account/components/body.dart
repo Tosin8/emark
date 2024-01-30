@@ -42,11 +42,14 @@ class AccountBody extends StatelessWidget {
                     SizedBox(height: 20), 
                     Text('App Settings', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),), 
 
-                    SettingsMenuTile(mainTitle: 'Load Data', subTitle: 'Upload files to your cloud', 
-                    ),SettingsMenuTile(mainTitle: 'Geolocation', subTitle: 'Set recommendation based on location', 
-                    ),SettingsMenuTile(mainTitle: 'Offline Mode', subTitle: 'Continue to shop until you\'re conntected online', 
-                    ), 
-                    
+                    // SettingsMenuTile(mainTitle: 'Load Data', subTitle: 'Upload files to your cloud', 
+                    // ),SettingsMenuTile(mainTitle: 'Geolocation', subTitle: 'Set recommendation based on location', 
+                    // ),
+                    // SettingsMenuTile(mainTitle: 'Offline Mode', subTitle: 'Continue to shop until you\'re conntected online', 
+                    // ), 
+                    appSettingMenu(),
+                       
+                        
                     SizedBox(height: 20), 
                     accountbtn()
                 ],
@@ -56,6 +59,31 @@ class AccountBody extends StatelessWidget {
         ],
       
     )); 
+  }
+}
+
+class appSettingMenu extends StatefulWidget {
+  const appSettingMenu({
+    super.key,
+  });
+
+  @override
+  State<appSettingMenu> createState() => _appSettingMenuState();
+}
+
+class _appSettingMenuState extends State<appSettingMenu> {
+  bool _toggled = false; 
+  @override
+  Widget build(BuildContext context) {
+    return SwitchListTile(
+      
+      title: const Text('Offline mode', style: TextStyle(color: Colors.white, fontSize: 18),),
+      subtitle: const Text('data'),
+      value: _toggled,
+       onChanged: (bool value) {
+        setState(() => _toggled = value); 
+         
+       });
   }
 }
 

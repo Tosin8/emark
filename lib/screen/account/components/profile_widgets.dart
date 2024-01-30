@@ -74,43 +74,28 @@ final String subTitle;
 }
 
 
-class SettingsMenuBelowTile extends StatefulWidget {
-  const SettingsMenuBelowTile({
-    Key? key,
-    required this.mainTitle,
-    required this.subTitle,
-  }) : super(key: key);
-
-final String mainTitle; 
-final String subTitle; 
+class appSettingMenu extends StatefulWidget {
+  const appSettingMenu({
+    super.key,
+  });
 
   @override
-  State<SettingsMenuBelowTile> createState() => _SettingsMenuBelowTileState();
+  State<appSettingMenu> createState() => _appSettingMenuState();
 }
 
-class _SettingsMenuBelowTileState extends State<SettingsMenuBelowTile> {
-  bool isSwitched = false; 
+class _appSettingMenuState extends State<appSettingMenu> {
+  bool _toggled = false; 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector( 
-      onTap: (){}, 
-      child: ListTile(
-        leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
-        title:  Text(widget.mainTitle, style: const TextStyle(color: Colors.white, fontSize: 18),),
-
-        subtitle: Text(widget.subTitle, style: TextStyle(
-          color: Colors.white.withOpacity(0.6)),
-          ),
-          trailing: Switch(
-            activeColor: Colors.white,
-            value: isSwitched,
-           onChanged: (value) {
-            setState((){
-              isSwitched = value;
-            });
-
-   } ),
-    ));
+    return SwitchListTile(
+      
+      title: const Text('Offline mode', style: TextStyle(color: Colors.white, fontSize: 18),),
+      subtitle: const Text('data'),
+      value: _toggled,
+       onChanged: (bool value) {
+        setState(() => _toggled = value); 
+         
+       });
   }
 }
 
