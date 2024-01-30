@@ -1,8 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'profile_heading.dart';
-import 'profile_menu.dart';
+import 'profile_widgets.dart';
 
 class AccountBody extends StatelessWidget {
   const AccountBody({super.key});
@@ -23,7 +22,7 @@ class AccountBody extends StatelessWidget {
               topLeft: Radius.circular(20) , 
               topRight: Radius.circular(20)),  color: Colors.black,
           ),
-            child:  Padding(
+            child:  const Padding(
               padding: EdgeInsets.all(15.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,21 +48,7 @@ class AccountBody extends StatelessWidget {
                     ), 
                     
                     SizedBox(height: 20), 
-                    GestureDetector( 
-                      onTap: () {
-                        
-                      },
-                      child: Container(
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20), 
-                          border: Border.all(color: Colors.white),
-                      
-                          
-                        ),
-                        child: Align(child: Text('Logout', style: TextStyle(color: Colors.white, fontSize: 18),),),
-                      ),
-                    )
+                    accountbtn()
                 ],
               ),
             ),
@@ -71,30 +56,6 @@ class AccountBody extends StatelessWidget {
         ],
       
     )); 
-  }
-}
-
-class SettingsMenuTile extends StatelessWidget {
-  const SettingsMenuTile({
-    Key? key,
-    required this.mainTitle,
-    required this.subTitle,
-  }) : super(key: key);
-
-final String mainTitle; 
-final String subTitle; 
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector( 
-      onTap: (){}, 
-      child: ListTile(
-        leading: const Icon(Icons.home, size: 35,color: Colors.blueAccent,),
-        title:  Text(mainTitle, style: TextStyle(color: Colors.white, fontSize: 18),),
-        subtitle: Text(subTitle, style: TextStyle(
-          color: Colors.white.withOpacity(0.6)),),
-      ),
-    );
   }
 }
 
