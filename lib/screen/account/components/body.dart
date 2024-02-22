@@ -62,28 +62,3 @@ class AccountBody extends StatelessWidget {
   }
 }
 
-class appSettingMenu extends StatefulWidget {
-  const appSettingMenu({
-    super.key,
-  });
-
-  @override
-  State<appSettingMenu> createState() => _appSettingMenuState();
-}
-
-class _appSettingMenuState extends State<appSettingMenu> {
-  bool _toggled = false; 
-  @override
-  Widget build(BuildContext context) {
-    return SwitchListTile(
-      
-      title: const Text('Offline mode', style: TextStyle(color: Colors.white, fontSize: 18),),
-      subtitle: const Text('data'),
-      value: _toggled,
-       onChanged: (bool value) {
-        setState(() => _toggled = value); 
-         
-       });
-  }
-}
-
