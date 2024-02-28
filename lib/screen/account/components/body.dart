@@ -47,7 +47,7 @@ class AccountBody extends StatelessWidget {
                     // ),
                     // SettingsMenuTile(mainTitle: 'Offline Mode', subTitle: 'Continue to shop until you\'re conntected online', 
                     // ), 
-                    appSettingMenu(),
+                   // appSettingMenu(),
                        
                         
                     SizedBox(height: 20), 
